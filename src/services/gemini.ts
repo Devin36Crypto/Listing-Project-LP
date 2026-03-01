@@ -1,7 +1,5 @@
 import { GoogleGenAI, ThinkingLevel, Modality } from "@google/genai";
 
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
-
 export interface ChatResponse {
   text: string;
   error?: string;
@@ -13,6 +11,7 @@ export async function sendChatMessage(
   useThinking: boolean = false
 ): Promise<ChatResponse> {
   try {
+    const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
     const modelName = "gemini-3.1-pro-preview";
     
     const config: any = {
@@ -39,6 +38,7 @@ export async function sendChatMessage(
 
 export async function generateSpeech(text: string): Promise<string | null> {
   try {
+    const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
     const response = await ai.models.generateContent({
       model: "gemini-2.5-flash-preview-tts",
       contents: [{ parts: [{ text }] }],
