@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "motion/react";
-import { X, FileText, Scale, AlertCircle, CreditCard, UserCheck } from "lucide-react";
+import { X, FileText, Scale, AlertCircle, CreditCard, UserCheck, Users } from "lucide-react";
 
 interface TermsOfServiceProps {
   isOpen: boolean;
@@ -76,22 +76,38 @@ export default function TermsOfService({ isOpen, onClose }: TermsOfServiceProps)
             <section>
               <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
                 <UserCheck className="w-5 h-5 text-indigo-400" />
-                3. User Accounts
+                3. User Accounts & Security
               </h3>
               <p>
-                To access certain features, you may need to register for an account. You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account.
+                To access certain features, you may need to register for an account or provide an API Key. You are responsible for maintaining the confidentiality of your account credentials, API Keys, and Vault Keys.
               </p>
               <ul className="list-disc pl-5 space-y-2 mt-2">
                 <li>You must provide accurate and complete information.</li>
-                <li>You may not share your account credentials with others.</li>
+                <li>You are responsible for all activities that occur under your credentials.</li>
                 <li>You must notify us immediately of any unauthorized use of your account.</li>
+                <li>We are not liable for data loss due to lost Vault Keys, as we do not store them.</li>
+              </ul>
+            </section>
+
+            <section>
+              <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
+                <Users className="w-5 h-5 text-indigo-400" />
+                4. Peer-to-Peer Interactions
+              </h3>
+              <p>
+                The Service includes features that allow you to discover and connect with other users nearby ("Spatial Peer Discovery"). By using these features, you acknowledge and agree that:
+              </p>
+              <ul className="list-disc pl-5 space-y-2 mt-2">
+                <li>Your presence may be visible to other users in your vicinity.</li>
+                <li>You are solely responsible for your interactions with other users.</li>
+                <li>We do not screen or verify the identity of users you connect with via Peer Discovery.</li>
               </ul>
             </section>
 
             <section>
               <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
                 <CreditCard className="w-5 h-5 text-indigo-400" />
-                4. Subscription and Billing
+                5. Subscription and Billing
               </h3>
               <p>
                 Certain features of the Service are available only with a paid subscription. By subscribing, you agree to pay the fees associated with your chosen plan.

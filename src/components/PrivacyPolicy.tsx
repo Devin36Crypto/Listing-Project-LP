@@ -66,17 +66,23 @@ export default function PrivacyPolicy({ isOpen, onClose }: PrivacyPolicyProps) {
             <section>
               <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
                 <FileText className="w-5 h-5 text-indigo-400" />
-                2. Information We Collect
+                2. Information We Collect & Local Storage
               </h3>
               <ul className="list-disc pl-5 space-y-2">
                 <li>
-                  <strong>Audio Data:</strong> We collect audio recordings that you voluntarily provide when using our transcription and analysis features. This data is processed to provide you with transcripts and insights.
+                  <strong>Local-First Audio Data:</strong> Audio recordings and transcripts are stored locally on your device using IndexedDB. We do not store your session history on our servers.
                 </li>
                 <li>
-                  <strong>Personal Information:</strong> When you register, we may collect your name, email address, and payment information.
+                  <strong>Ephemeral Processing:</strong> Audio sent to our AI partners for transcription is processed in memory and discarded immediately after processing. It is not retained for training purposes.
                 </li>
                 <li>
-                  <strong>Usage Data:</strong> We automatically collect information about your device, including IP address, device type, operating system, and app usage statistics to improve our Service.
+                  <strong>Peer Discovery Data:</strong> When using Spatial Peer Discovery, your device may broadcast a temporary, anonymous identifier to nearby devices via Bluetooth or Wi-Fi to facilitate connections. This identifier is not linked to your personal identity.
+                </li>
+                <li>
+                  <strong>Personal Information:</strong> When you register or use API keys, we handle credentials securely. Vault Keys are never transmitted to us.
+                </li>
+                <li>
+                  <strong>Usage Data:</strong> We automatically collect anonymous information about your device and app usage statistics to improve our Service.
                 </li>
               </ul>
             </section>

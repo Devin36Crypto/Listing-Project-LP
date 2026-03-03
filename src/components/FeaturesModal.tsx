@@ -36,6 +36,11 @@ export default function FeaturesModal({ isOpen, onClose }: FeaturesModalProps) {
           icon: Brain,
           title: "Context-Aware AI Assistant",
           description: "Ask questions about the conversation or get cultural context for terms mentioned in real-time."
+        },
+        {
+          icon: Users,
+          title: "Spatial Peer Discovery",
+          description: "Discover and connect with other Listening Project users nearby for synchronized translation sessions."
         }
       ]
     },

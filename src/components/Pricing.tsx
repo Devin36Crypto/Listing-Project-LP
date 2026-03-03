@@ -1,7 +1,5 @@
 import { motion } from "motion/react";
 import { Check, Smartphone, Calendar } from "lucide-react";
-import { useState } from "react";
-import PaymentModal from "./PaymentModal";
 
 const plans = [
   {
@@ -19,7 +17,9 @@ const plans = [
     ],
     notIncluded: [],
     cta: "Start 7-Day Free Trial",
-    popular: false
+    popular: false,
+    variant: "mobile",
+    planId: "mobile-monthly"
   },
   {
     name: "Tablet",
@@ -36,7 +36,9 @@ const plans = [
     ],
     notIncluded: [],
     cta: "Start 7-Day Free Trial",
-    popular: false
+    popular: false,
+    variant: "tablet",
+    planId: "tablet-monthly"
   },
   {
     name: "Desktop",
@@ -53,7 +55,9 @@ const plans = [
     ],
     notIncluded: [],
     cta: "Start 7-Day Free Trial",
-    popular: false
+    popular: false,
+    variant: "desktop",
+    planId: "desktop-monthly"
   },
   {
     name: "Annual",
@@ -69,27 +73,19 @@ const plans = [
     ],
     notIncluded: [],
     cta: "Start 7-Day Free Trial",
-    popular: true
+    popular: true,
+    variant: "mobile",
+    planId: "mobile-annual"
   }
 ];
 
-export default function Pricing() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedPlan, setSelectedPlan] = useState<typeof plans[0] | null>(null);
+interface PricingProps {
+  onPlanSelect?: (variant: "auto" | "mobile" | "desktop" | "tablet", planId: string) => void;
+}
 
-  const handlePlanSelect = (plan: typeof plans[0]) => {
-    setSelectedPlan(plan);
-    setIsModalOpen(true);
-  };
-
+export default function Pricing({ onPlanSelect }: PricingProps) {
   return (
     <section id="pricing" className="py-24 relative overflow-hidden">
-      <PaymentModal 
-        isOpen={isModalOpen} 
-        onClose={() => setIsModalOpen(false)} 
-        plan={selectedPlan} 
-      />
-
       {/* Background Elements */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-indigo-900/10 rounded-full blur-[120px]" />
@@ -159,7 +155,7 @@ export default function Pricing() {
               </div>
 
               <button
-                onClick={() => handlePlanSelect(plan)}
+                onClick={() => onPlanSelect?.(plan.variant as any, plan.planId)}
                 className="w-full py-4 rounded-xl font-medium transition-all text-lg bg-indigo-600 hover:bg-indigo-700 text-white shadow-lg hover:shadow-indigo-500/25"
               >
                 {plan.cta}

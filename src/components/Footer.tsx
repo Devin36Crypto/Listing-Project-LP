@@ -6,9 +6,22 @@ interface FooterProps {
   onOpenTerms?: () => void;
   onOpenFeatures?: () => void;
   onOpenAbout?: () => void;
+  onOpenDownload?: () => void;
+  onOpenChangelog?: () => void;
+  onOpenHelp?: () => void;
+  onOpenContact?: () => void;
 }
 
-export default function Footer({ onOpenPrivacy, onOpenTerms, onOpenFeatures, onOpenAbout }: FooterProps) {
+export default function Footer({ 
+  onOpenPrivacy, 
+  onOpenTerms, 
+  onOpenFeatures, 
+  onOpenAbout, 
+  onOpenDownload, 
+  onOpenChangelog,
+  onOpenHelp,
+  onOpenContact
+}: FooterProps) {
   return (
     <footer className="bg-black border-t border-white/10 py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -42,17 +55,44 @@ export default function Footer({ onOpenPrivacy, onOpenTerms, onOpenFeatures, onO
                   Features
                 </button>
               </li>
-              <li><a href="#" className="hover:text-indigo-400 transition-colors">Pricing</a></li>
-              <li><a href="#" className="hover:text-indigo-400 transition-colors">Download</a></li>
-              <li><a href="#" className="hover:text-indigo-400 transition-colors">Changelog</a></li>
+              <li>
+                <button 
+                  onClick={onOpenDownload}
+                  className="hover:text-indigo-400 transition-colors text-left"
+                >
+                  Download
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={onOpenChangelog}
+                  className="hover:text-indigo-400 transition-colors text-left"
+                >
+                  Changelog
+                </button>
+              </li>
             </ul>
           </div>
           
           <div>
             <h4 className="font-semibold mb-4 text-gray-200">Support</h4>
             <ul className="space-y-2 text-gray-400">
-              <li><a href="#" className="hover:text-indigo-400 transition-colors">Help Center</a></li>
-              <li><a href="#" className="hover:text-indigo-400 transition-colors">Contact Us</a></li>
+              <li>
+                <button 
+                  onClick={onOpenHelp}
+                  className="hover:text-indigo-400 transition-colors text-left"
+                >
+                  Help Center
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={onOpenContact}
+                  className="hover:text-indigo-400 transition-colors text-left"
+                >
+                  Contact Us
+                </button>
+              </li>
               <li>
                 <button 
                   onClick={onOpenPrivacy}

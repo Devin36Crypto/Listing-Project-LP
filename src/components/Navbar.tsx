@@ -3,7 +3,7 @@ import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import Logo from "./Logo";
 
-export default function Navbar() {
+export default function Navbar({ onOpenDownload }: { onOpenDownload?: () => void }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -30,7 +30,7 @@ export default function Navbar() {
                 <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
                 </svg>
-                Google Play
+                Get on Google Play
               </a>
             </div>
           </div>
@@ -57,7 +57,17 @@ export default function Navbar() {
             <a href="#testimonials" className="block px-3 py-2 rounded-md text-base font-medium hover:text-indigo-400">Stories</a>
             <a href="#demo" className="block px-3 py-2 rounded-md text-base font-medium hover:text-indigo-400">AI Demo</a>
             <a href="#pricing" className="block px-3 py-2 rounded-md text-base font-medium hover:text-indigo-400">Pricing</a>
-            <a href="#download" className="block w-full text-left px-3 py-2 rounded-md text-base font-medium bg-indigo-600/20 text-indigo-400">Download App</a>
+            <a 
+              href="https://play.google.com/store/apps"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full text-left px-3 py-2 rounded-md text-base font-medium bg-indigo-600/20 text-indigo-400 flex items-center gap-2"
+            >
+              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
+              </svg>
+              Get on Google Play
+            </a>
           </div>
         </motion.div>
       )}
