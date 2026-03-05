@@ -118,10 +118,24 @@ export default function PrivacyPolicy({ isOpen, onClose }: PrivacyPolicyProps) {
             <section>
               <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
                 <Lock className="w-5 h-5 text-indigo-400" />
-                5. Data Security
+                5. Data Security & Encryption
               </h3>
               <p>
-                We implement military-grade security measures, including AES-256 encryption, to protect your personal information and audio data both in transit and at rest. However, no method of transmission over the Internet is 100% secure, and we cannot guarantee absolute security.
+                We implement military-grade security measures to protect your personal information and audio data both in transit and at rest.
+              </p>
+              <ul className="list-disc pl-5 space-y-2 mt-2">
+                <li>
+                  <strong>End-to-End Encryption:</strong> All data transmitted between your device and our servers is encrypted using TLS 1.3.
+                </li>
+                <li>
+                  <strong>At-Rest Encryption:</strong> Data stored on your device is protected by your device's native encryption. Any data temporarily processed on our servers is encrypted using AES-256.
+                </li>
+                <li>
+                  <strong>Zero-Knowledge Architecture:</strong> We design our systems so that we cannot access your private recordings. Your encryption keys are managed locally on your device where possible.
+                </li>
+              </ul>
+              <p className="mt-4">
+                However, no method of transmission over the Internet is 100% secure, and we cannot guarantee absolute security.
               </p>
             </section>
 

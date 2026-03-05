@@ -18,6 +18,8 @@ const DownloadModal = lazy(() => import("./components/DownloadModal"));
 const ChangelogModal = lazy(() => import("./components/ChangelogModal"));
 const HelpCenterModal = lazy(() => import("./components/HelpCenterModal"));
 const ContactModal = lazy(() => import("./components/ContactModal"));
+const LegalDisclaimerModal = lazy(() => import("./components/LegalDisclaimerModal"));
+import LegalBanner from "./components/LegalBanner";
 
 export default function App() {
   const [isPrivacyOpen, setIsPrivacyOpen] = useState(false);
@@ -28,6 +30,7 @@ export default function App() {
   const [isChangelogOpen, setIsChangelogOpen] = useState(false);
   const [isHelpOpen, setIsHelpOpen] = useState(false);
   const [isContactOpen, setIsContactOpen] = useState(false);
+  const [isLegalOpen, setIsLegalOpen] = useState(false);
   const [downloadVariant, setDownloadVariant] = useState<"auto" | "mobile" | "desktop" | "tablet" | "all">("auto");
   const [initialPlanId, setInitialPlanId] = useState<string | undefined>(undefined);
   
@@ -89,7 +92,10 @@ export default function App() {
         onOpenChangelog={() => setIsChangelogOpen(true)}
         onOpenHelp={() => setIsHelpOpen(true)}
         onOpenContact={() => setIsContactOpen(true)}
+        onOpenLegal={() => setIsLegalOpen(true)}
       />
+      
+      <LegalBanner />
       
       <Suspense fallback={null}>
         {isPrivacyOpen && <PrivacyPolicy isOpen={isPrivacyOpen} onClose={() => setIsPrivacyOpen(false)} />}
@@ -108,6 +114,7 @@ export default function App() {
           />
         )}
         {isContactOpen && <ContactModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />}
+        {isLegalOpen && <LegalDisclaimerModal isOpen={isLegalOpen} onClose={() => setIsLegalOpen(false)} />}
         {isDownloadOpen && (
           <DownloadModal 
             isOpen={isDownloadOpen} 

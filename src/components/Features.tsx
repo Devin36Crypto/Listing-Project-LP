@@ -25,7 +25,7 @@ const features = [
   {
     icon: Shield,
     title: "Military-Grade Encryption",
-    description: "Your data is secured with AES-256 encryption. We employ a Zero-Knowledge architecture where possible."
+    description: "Your data is secured with AES-256 encryption. We employ a Zero-Knowledge architecture where possible, ensuring only you have access to your data."
   },
   {
     icon: Globe,

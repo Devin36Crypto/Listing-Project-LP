@@ -31,6 +31,7 @@ export default function DownloadModal({
   const [step, setStep] = useState<"selection" | "payment" | "install">("selection");
   const [selectedPlanId, setSelectedPlanId] = useState<string>("");
   const [isProcessing, setIsProcessing] = useState(false);
+  const [isDisclaimerAccepted, setIsDisclaimerAccepted] = useState(false);
 
   // Define plans based on variant
   const getPlans = (): Plan[] => {
@@ -247,10 +248,25 @@ export default function DownloadModal({
                   </div>
                 </div>
 
+                <div className="bg-yellow-500/5 border border-yellow-500/10 rounded-xl p-4 flex items-start gap-3">
+                  <div className="flex items-center h-5 mt-0.5">
+                    <input
+                      id="legal-agreement"
+                      type="checkbox"
+                      checked={isDisclaimerAccepted}
+                      onChange={(e) => setIsDisclaimerAccepted(e.target.checked)}
+                      className="w-4 h-4 text-indigo-600 bg-black/50 border-gray-500 rounded focus:ring-indigo-500 focus:ring-offset-0 cursor-pointer"
+                    />
+                  </div>
+                  <label htmlFor="legal-agreement" className="text-sm text-gray-300 cursor-pointer select-none">
+                    I acknowledge that I am solely responsible for complying with all applicable laws regarding the recording of conversations in my jurisdiction. I agree to the Terms of Service and Privacy Policy.
+                  </label>
+                </div>
+
                 <button
                   onClick={handlePayment}
-                  disabled={isProcessing}
-                  className="w-full bg-green-600 hover:bg-green-700 text-white py-4 rounded-xl font-bold text-lg transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                  disabled={isProcessing || !isDisclaimerAccepted}
+                  className="w-full bg-green-600 hover:bg-green-700 text-white py-4 rounded-xl font-bold text-lg transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-green-600"
                 >
                   {isProcessing ? (
                     <>Processing...</>
@@ -262,7 +278,7 @@ export default function DownloadModal({
                   )}
                 </button>
                 <p className="text-center text-xs text-gray-500">
-                  Your payment is secured with 256-bit encryption. You will not be charged today. Billing starts after your 7-day free trial ends. Cancel anytime.
+                  Your payment is secured with 256-bit SSL encryption. We do not store your credit card details. Billing starts after your 7-day free trial ends. Cancel anytime.
                 </p>
               </div>
             )}

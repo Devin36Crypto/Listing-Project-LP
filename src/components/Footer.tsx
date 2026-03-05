@@ -10,6 +10,7 @@ interface FooterProps {
   onOpenChangelog?: () => void;
   onOpenHelp?: () => void;
   onOpenContact?: () => void;
+  onOpenLegal?: () => void;
 }
 
 export default function Footer({ 
@@ -20,7 +21,8 @@ export default function Footer({
   onOpenDownload, 
   onOpenChangelog,
   onOpenHelp,
-  onOpenContact
+  onOpenContact,
+  onOpenLegal
 }: FooterProps) {
   return (
     <footer className="bg-black border-t border-white/10 py-12">
@@ -107,6 +109,14 @@ export default function Footer({
                   className="hover:text-indigo-400 transition-colors text-left"
                 >
                   Terms of Service
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={onOpenLegal}
+                  className="hover:text-indigo-400 transition-colors text-left"
+                >
+                  Legal Disclaimer
                 </button>
               </li>
             </ul>
