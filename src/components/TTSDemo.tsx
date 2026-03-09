@@ -49,12 +49,12 @@ export default function TTSDemo() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12 backdrop-blur-sm relative overflow-hidden">
           {/* Decorative background */}
-          <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/10 rounded-full blur-[64px] -translate-y-1/2 translate-x-1/2" />
+          <div className="absolute top-0 right-0 w-64 h-64 bg-brand-500/10 rounded-full blur-[64px] -translate-y-1/2 translate-x-1/2" />
           <Headphones className="absolute -bottom-12 -left-12 w-64 h-64 text-white/[0.03] rotate-12 pointer-events-none" />
           
           <div className="relative z-10">
             <div className="flex items-center gap-3 mb-6">
-              <Volume2 className="w-6 h-6 text-indigo-400" />
+              <Volume2 className="w-6 h-6 text-brand-400" />
               <h2 className="text-2xl font-bold font-display">Experience Our Voice</h2>
             </div>
             
@@ -67,7 +67,7 @@ export default function TTSDemo() {
               <textarea
                 value={text}
                 onChange={(e) => setText(e.target.value)}
-                className="w-full bg-black/20 border border-white/10 rounded-xl p-4 text-white placeholder-gray-500 focus:outline-none focus:border-indigo-500 transition-colors h-32 resize-none"
+                className="w-full bg-black/20 border border-white/10 rounded-xl p-4 text-white placeholder-gray-500 focus:outline-none focus:border-brand-500 transition-colors h-32 resize-none"
                 placeholder="Type something to listen..."
                 aria-label="Text to speech input"
               />
@@ -95,7 +95,7 @@ export default function TTSDemo() {
                   <div className="flex items-center gap-4 bg-white/10 px-4 py-2 rounded-full">
                     <button
                       onClick={togglePlay}
-                      className="w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center hover:bg-indigo-700 transition-colors"
+                      className="w-10 h-10 bg-brand-600 rounded-full flex items-center justify-center hover:bg-brand-700 transition-colors"
                     >
                       {isPlaying ? (
                         <Pause className="w-4 h-4 text-white" />
@@ -108,7 +108,7 @@ export default function TTSDemo() {
                         initial={{ width: "0%" }}
                         animate={{ width: isPlaying ? "100%" : "0%" }}
                         transition={{ duration: 3, ease: "linear", repeat: isPlaying ? Infinity : 0 }}
-                        className="h-full bg-indigo-400"
+                        className="h-full bg-brand-400"
                       />
                     </div>
                   </div>

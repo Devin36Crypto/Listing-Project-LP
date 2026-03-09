@@ -84,7 +84,7 @@ export default function ChangelogModal({ isOpen, onClose }: ChangelogModalProps)
           {/* Header */}
           <div className="flex items-center justify-between p-6 border-b border-white/10 bg-zinc-900/50 backdrop-blur-md z-10">
             <div className="flex items-center gap-3">
-              <GitCommit className="w-6 h-6 text-indigo-500" />
+              <GitCommit className="w-6 h-6 text-brand-500" />
               <h2 className="text-xl font-bold font-display">Changelog</h2>
             </div>
             <button 
@@ -102,7 +102,7 @@ export default function ChangelogModal({ isOpen, onClose }: ChangelogModalProps)
                 <div key={index} className="relative pl-12">
                   {/* Timeline Dot */}
                   <div className={`absolute left-0 top-1.5 w-[40px] h-[40px] rounded-full border-4 border-zinc-900 flex items-center justify-center z-10 ${
-                    release.type === 'major' ? 'bg-indigo-600' : 'bg-zinc-700'
+                    release.type === 'major' ? 'bg-brand-600' : 'bg-zinc-700'
                   }`}>
                     {release.type === 'major' ? <Star className="w-4 h-4 text-white" /> : <GitCommit className="w-4 h-4 text-gray-300" />}
                   </div>

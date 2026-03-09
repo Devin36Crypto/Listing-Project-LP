@@ -31,7 +31,7 @@ export default function TermsOfService({ isOpen, onClose }: TermsOfServiceProps)
           {/* Header */}
           <div className="flex items-center justify-between p-6 border-b border-white/10 bg-zinc-900/50 backdrop-blur-md z-10">
             <div className="flex items-center gap-3">
-              <Scale className="w-6 h-6 text-indigo-500" />
+              <Scale className="w-6 h-6 text-brand-500" />
               <h2 className="text-xl font-bold font-display">Terms of Service</h2>
             </div>
             <button 
@@ -44,8 +44,8 @@ export default function TermsOfService({ isOpen, onClose }: TermsOfServiceProps)
 
           {/* Content */}
           <div className="overflow-y-auto p-6 md:p-10 space-y-8 text-gray-300 leading-relaxed custom-scrollbar">
-            <div className="bg-indigo-500/10 border border-indigo-500/20 rounded-xl p-4 mb-8">
-              <p className="text-sm text-indigo-300">
+            <div className="bg-brand-500/10 border border-brand-500/20 rounded-xl p-4 mb-8">
+              <p className="text-sm text-brand-300">
                 <strong>Last Updated:</strong> March 1, 2026 <br />
                 <strong>Effective Date:</strong> March 1, 2026
               </p>
@@ -62,7 +62,7 @@ export default function TermsOfService({ isOpen, onClose }: TermsOfServiceProps)
 
             <section>
               <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
-                <FileText className="w-5 h-5 text-indigo-400" />
+                <FileText className="w-5 h-5 text-brand-400" />
                 2. Description of Service & Privacy
               </h3>
               <p>
@@ -78,7 +78,7 @@ export default function TermsOfService({ isOpen, onClose }: TermsOfServiceProps)
 
             <section>
               <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
-                <UserCheck className="w-5 h-5 text-indigo-400" />
+                <UserCheck className="w-5 h-5 text-brand-400" />
                 3. User Accounts & Security
               </h3>
               <p>
@@ -94,7 +94,7 @@ export default function TermsOfService({ isOpen, onClose }: TermsOfServiceProps)
 
             <section>
               <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
-                <Users className="w-5 h-5 text-indigo-400" />
+                <Users className="w-5 h-5 text-brand-400" />
                 4. Peer-to-Peer Interactions
               </h3>
               <p>
@@ -109,7 +109,7 @@ export default function TermsOfService({ isOpen, onClose }: TermsOfServiceProps)
 
             <section>
               <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
-                <CreditCard className="w-5 h-5 text-indigo-400" />
+                <CreditCard className="w-5 h-5 text-brand-400" />
                 5. Subscription and Billing
               </h3>
               <p>
@@ -124,7 +124,7 @@ export default function TermsOfService({ isOpen, onClose }: TermsOfServiceProps)
 
             <section>
               <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
-                <AlertCircle className="w-5 h-5 text-indigo-400" />
+                <AlertCircle className="w-5 h-5 text-brand-400" />
                 5. Prohibited Conduct
               </h3>
               <p>You agree not to use the Service to:</p>

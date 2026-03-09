@@ -120,7 +120,7 @@ export default function SystemStatusModal({ isOpen, onClose }: SystemStatusModal
       <div className="bg-zinc-900 border border-white/10 rounded-2xl w-full max-w-md overflow-hidden shadow-2xl">
         <div className="p-6 border-b border-white/10 flex justify-between items-center">
           <h2 className="text-xl font-bold text-white flex items-center gap-2">
-            <Server className="w-5 h-5 text-indigo-500" />
+            <Server className="w-5 h-5 text-brand-500" />
             System Status
           </h2>
           <button onClick={onClose} className="text-gray-400 hover:text-white transition-colors">

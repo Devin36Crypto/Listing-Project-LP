@@ -76,7 +76,7 @@ export default function PaymentModal({ isOpen, onClose, plan }: PaymentModalProp
                     <h3 className="text-2xl font-bold font-display mb-2">Checkout</h3>
                     <div className="flex items-baseline gap-2 text-gray-400">
                       <span>Subscribing to</span>
-                      <span className="text-indigo-400 font-semibold">{plan.name} Plan</span>
+                      <span className="text-brand-400 font-semibold">{plan.name} Plan</span>
                     </div>
                   </div>
 
@@ -100,7 +100,7 @@ export default function PaymentModal({ isOpen, onClose, plan }: PaymentModalProp
                         required
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        className="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-indigo-500 transition-colors"
+                        className="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-500 transition-colors"
                         placeholder="you@example.com"
                       />
                     </div>
@@ -115,7 +115,7 @@ export default function PaymentModal({ isOpen, onClose, plan }: PaymentModalProp
                             required
                             value={cardNumber}
                             onChange={(e) => setCardNumber(e.target.value.replace(/\D/g, '').slice(0, 16))}
-                            className="w-full bg-black/20 border border-white/10 rounded-xl pl-12 pr-4 py-3 text-white focus:outline-none focus:border-indigo-500 transition-colors font-mono"
+                            className="w-full bg-black/20 border border-white/10 rounded-xl pl-12 pr-4 py-3 text-white focus:outline-none focus:border-brand-500 transition-colors font-mono"
                             placeholder="0000 0000 0000 0000"
                           />
                         </div>
@@ -125,7 +125,7 @@ export default function PaymentModal({ isOpen, onClose, plan }: PaymentModalProp
                             required
                             value={expiry}
                             onChange={(e) => setExpiry(e.target.value)}
-                            className="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-indigo-500 transition-colors font-mono text-center"
+                            className="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-500 transition-colors font-mono text-center"
                             placeholder="MM/YY"
                           />
                           <div className="relative">
@@ -135,7 +135,7 @@ export default function PaymentModal({ isOpen, onClose, plan }: PaymentModalProp
                               required
                               value={cvc}
                               onChange={(e) => setCvc(e.target.value.replace(/\D/g, '').slice(0, 3))}
-                              className="w-full bg-black/20 border border-white/10 rounded-xl pl-10 pr-4 py-3 text-white focus:outline-none focus:border-indigo-500 transition-colors font-mono"
+                              className="w-full bg-black/20 border border-white/10 rounded-xl pl-10 pr-4 py-3 text-white focus:outline-none focus:border-brand-500 transition-colors font-mono"
                               placeholder="CVC"
                             />
                           </div>
@@ -145,7 +145,7 @@ export default function PaymentModal({ isOpen, onClose, plan }: PaymentModalProp
 
                     <button
                       type="submit"
-                      className="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-4 rounded-xl font-semibold shadow-lg shadow-indigo-500/20 transition-all flex items-center justify-center gap-2"
+                      className="w-full bg-brand-600 hover:bg-brand-700 text-white py-4 rounded-xl font-semibold shadow-lg shadow-brand-500/20 transition-all flex items-center justify-center gap-2"
                     >
                       <ShieldCheck className="w-5 h-5" />
                       Pay {plan.price}
@@ -162,8 +162,8 @@ export default function PaymentModal({ isOpen, onClose, plan }: PaymentModalProp
               {step === "processing" && (
                 <div className="p-12 flex flex-col items-center justify-center min-h-[400px]">
                   <div className="relative w-20 h-20 mb-8">
-                    <div className="absolute inset-0 border-4 border-indigo-500/30 rounded-full" />
-                    <div className="absolute inset-0 border-4 border-indigo-500 border-t-transparent rounded-full animate-spin" />
+                    <div className="absolute inset-0 border-4 border-brand-500/30 rounded-full" />
+                    <div className="absolute inset-0 border-4 border-brand-500 border-t-transparent rounded-full animate-spin" />
                   </div>
                   <h3 className="text-xl font-semibold mb-2">Processing Payment...</h3>
                   <p className="text-gray-400 text-center">Please do not close this window.</p>

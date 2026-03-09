@@ -201,7 +201,7 @@ export default function DownloadModal({
           {/* Header */}
           <div className="flex items-center justify-between p-6 border-b border-white/10 bg-zinc-900/50 backdrop-blur-md z-10 sticky top-0">
             <div className="flex items-center gap-3">
-              <Download className="w-6 h-6 text-indigo-500" />
+              <Download className="w-6 h-6 text-brand-500" />
               <h2 className="text-xl font-bold font-display">
                 {step === "install" ? "Install Listening Project" : (isLoginMode ? "Log In" : "Select Plan & Download")}
               </h2>
@@ -231,7 +231,7 @@ export default function DownloadModal({
                       onClick={() => setSelectedPlanId(plan.id)}
                       className={`relative p-4 rounded-xl border-2 text-left transition-all ${
                         selectedPlanId === plan.id 
-                          ? "border-indigo-500 bg-indigo-500/10" 
+                          ? "border-brand-500 bg-brand-500/10" 
                           : "border-white/10 bg-white/5 hover:border-white/20"
                       }`}
                     >
@@ -245,12 +245,12 @@ export default function DownloadModal({
                       <div className="flex gap-3 text-sm text-gray-400">
                         {plan.features.map((feature, i) => (
                           <span key={i} className="flex items-center gap-1">
-                            <Check className="w-3 h-3 text-indigo-400" /> {feature}
+                            <Check className="w-3 h-3 text-brand-400" /> {feature}
                           </span>
                         ))}
                       </div>
                       {selectedPlanId === plan.id && (
-                        <div className="absolute top-4 right-4 w-5 h-5 bg-indigo-500 rounded-full flex items-center justify-center">
+                        <div className="absolute top-4 right-4 w-5 h-5 bg-brand-500 rounded-full flex items-center justify-center">
                           <Check className="w-3 h-3 text-white" />
                         </div>
                       )}
@@ -261,7 +261,7 @@ export default function DownloadModal({
                 <div className="flex flex-col gap-3 mt-6">
                     <button
                     onClick={() => setStep("payment")}
-                    className="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-4 rounded-xl font-bold text-lg transition-colors flex items-center justify-center gap-2"
+                    className="w-full bg-brand-600 hover:bg-brand-700 text-white py-4 rounded-xl font-bold text-lg transition-colors flex items-center justify-center gap-2"
                     >
                     Continue to Payment <ChevronDown className="w-5 h-5 rotate-[-90deg]" />
                     </button>
@@ -286,7 +286,7 @@ export default function DownloadModal({
 
                 <div className="bg-white/5 p-6 rounded-xl border border-white/10">
                   <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
-                    <CreditCard className="w-5 h-5 text-indigo-400" />
+                    <CreditCard className="w-5 h-5 text-brand-400" />
                     {isLoginMode ? "Log In" : "Create Account & Secure Payment"}
                   </h3>
                   
@@ -304,7 +304,7 @@ export default function DownloadModal({
                         required
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-indigo-500 transition-colors"
+                        className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-brand-500 transition-colors"
                         placeholder="you@example.com"
                       />
                     </div>
@@ -316,7 +316,7 @@ export default function DownloadModal({
                           required
                           value={password}
                           onChange={(e) => setPassword(e.target.value)}
-                          className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-indigo-500 transition-colors"
+                          className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-brand-500 transition-colors"
                           placeholder={isLoginMode ? "Enter your password" : "Create a password"}
                         />
                         <Lock className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500" />
@@ -331,7 +331,7 @@ export default function DownloadModal({
                             <input 
                                 type="text" 
                                 placeholder="0000 0000 0000 0000" 
-                                className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-indigo-500 transition-colors"
+                                className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-brand-500 transition-colors"
                             />
                             </div>
                             <div className="grid grid-cols-2 gap-4 mt-4">
@@ -340,7 +340,7 @@ export default function DownloadModal({
                                 <input 
                                 type="text" 
                                 placeholder="MM/YY" 
-                                className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-indigo-500 transition-colors"
+                                className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-brand-500 transition-colors"
                                 />
                             </div>
                             <div>
@@ -348,7 +348,7 @@ export default function DownloadModal({
                                 <input 
                                 type="text" 
                                 placeholder="123" 
-                                className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-indigo-500 transition-colors"
+                                className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-brand-500 transition-colors"
                                 />
                             </div>
                             </div>
@@ -365,7 +365,7 @@ export default function DownloadModal({
                         type="checkbox"
                         checked={isDisclaimerAccepted}
                         onChange={(e) => setIsDisclaimerAccepted(e.target.checked)}
-                        className="w-4 h-4 text-indigo-600 bg-black/50 border-gray-500 rounded focus:ring-indigo-500 focus:ring-offset-0 cursor-pointer"
+                        className="w-4 h-4 text-brand-600 bg-black/50 border-gray-500 rounded focus:ring-brand-500 focus:ring-offset-0 cursor-pointer"
                         />
                     </div>
                     <label htmlFor="legal-agreement" className="text-sm text-gray-300 cursor-pointer select-none">
@@ -410,7 +410,7 @@ export default function DownloadModal({
                             setIsLoginMode(!isLoginMode);
                             setError(null);
                         }}
-                        className="text-sm text-indigo-400 hover:text-indigo-300 transition-colors"
+                        className="text-sm text-brand-400 hover:text-brand-300 transition-colors"
                     >
                         {isLoginMode ? "Need an account? Sign up" : "Already have an account? Log in"}
                     </button>
@@ -434,14 +434,14 @@ export default function DownloadModal({
 
                 {/* Install Button (if supported) */}
                 {deferredPrompt && (
-                  <div className="mb-8 p-6 bg-indigo-600/10 border border-indigo-500/20 rounded-xl text-center">
+                  <div className="mb-8 p-6 bg-brand-600/10 border border-brand-500/20 rounded-xl text-center">
                     <h3 className="text-lg font-semibold text-white mb-2">App Available</h3>
-                    <p className="text-indigo-200 mb-4 text-sm">
+                    <p className="text-brand-200 mb-4 text-sm">
                       Install the full Progressive Web App for the best experience.
                     </p>
                     <button
                       onClick={handleInstallApp}
-                      className="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-full font-semibold transition-colors flex items-center justify-center gap-2 mx-auto w-full sm:w-auto"
+                      className="bg-brand-600 hover:bg-brand-700 text-white px-6 py-3 rounded-full font-semibold transition-colors flex items-center justify-center gap-2 mx-auto w-full sm:w-auto"
                     >
                       <Download className="w-5 h-5" />
                       Install App Now
@@ -455,7 +455,7 @@ export default function DownloadModal({
                     <button
                       onClick={() => setActiveTab("android")}
                       className={`flex-1 py-2 px-4 rounded-lg text-sm font-medium transition-all flex items-center justify-center gap-2 ${
-                        activeTab === "android" ? "bg-indigo-600 text-white shadow-lg" : "text-gray-400 hover:text-white hover:bg-white/5"
+                        activeTab === "android" ? "bg-brand-600 text-white shadow-lg" : "text-gray-400 hover:text-white hover:bg-white/5"
                       }`}
                     >
                       <Smartphone className="w-4 h-4" />
@@ -464,7 +464,7 @@ export default function DownloadModal({
                     <button
                       onClick={() => setActiveTab("desktop")}
                       className={`flex-1 py-2 px-4 rounded-lg text-sm font-medium transition-all flex items-center justify-center gap-2 ${
-                        activeTab === "desktop" ? "bg-indigo-600 text-white shadow-lg" : "text-gray-400 hover:text-white hover:bg-white/5"
+                        activeTab === "desktop" ? "bg-brand-600 text-white shadow-lg" : "text-gray-400 hover:text-white hover:bg-white/5"
                       }`}
                     >
                       <Monitor className="w-4 h-4" />
@@ -484,7 +484,7 @@ export default function DownloadModal({
                   {activeTab === "android" && (
                     <div className="space-y-4">
                       <div className="flex items-start gap-4">
-                        <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0 font-bold text-indigo-400">1</div>
+                        <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0 font-bold text-brand-400">1</div>
                         <div>
                           <p className="text-white font-medium mb-1">Open Menu</p>
                           <p className="text-sm text-gray-400 flex items-center gap-2">
@@ -493,7 +493,7 @@ export default function DownloadModal({
                         </div>
                       </div>
                       <div className="flex items-start gap-4">
-                        <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0 font-bold text-indigo-400">2</div>
+                        <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0 font-bold text-brand-400">2</div>
                         <div>
                           <p className="text-white font-medium mb-1">Install App</p>
                           <p className="text-sm text-gray-400">
@@ -518,7 +518,7 @@ export default function DownloadModal({
                   {activeTab === "desktop" && (
                     <div className="space-y-4">
                       <div className="flex items-start gap-4">
-                        <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0 font-bold text-indigo-400">1</div>
+                        <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0 font-bold text-brand-400">1</div>
                         <div>
                           <p className="text-white font-medium mb-1">Check Address Bar</p>
                           <p className="text-sm text-gray-400 flex items-center gap-2">
@@ -527,7 +527,7 @@ export default function DownloadModal({
                         </div>
                       </div>
                       <div className="flex items-start gap-4">
-                        <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0 font-bold text-indigo-400">2</div>
+                        <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0 font-bold text-brand-400">2</div>
                         <div>
                           <p className="text-white font-medium mb-1">Click Install</p>
                           <p className="text-sm text-gray-400">

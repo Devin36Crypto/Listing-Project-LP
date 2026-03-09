@@ -57,7 +57,7 @@ export default function LegalDisclaimerModal({ isOpen, onClose }: LegalDisclaime
 
             <section>
               <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
-                <Globe className="w-5 h-5 text-indigo-400" />
+                <Globe className="w-5 h-5 text-brand-400" />
                 1. Recording Laws & Consent
               </h3>
               <p>
@@ -78,7 +78,7 @@ export default function LegalDisclaimerModal({ isOpen, onClose }: LegalDisclaime
 
             <section>
               <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
-                <ShieldAlert className="w-5 h-5 text-indigo-400" />
+                <ShieldAlert className="w-5 h-5 text-brand-400" />
                 2. User Responsibility & Liability
               </h3>
               <p>

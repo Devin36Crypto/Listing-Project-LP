@@ -41,27 +41,27 @@ export default function Testimonials() {
 
   return (
     <section id="testimonials" className="py-24 bg-black relative">
-      <ReviewModal 
-        isOpen={isReviewModalOpen} 
-        onClose={() => setIsReviewModalOpen(false)} 
-        onSubmit={handleAddReview} 
+      <ReviewModal
+        isOpen={isReviewModalOpen}
+        onClose={() => setIsReviewModalOpen(false)}
+        onSubmit={handleAddReview}
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-4">
             <h2 className="text-3xl md:text-5xl font-bold font-display">Trusted by Better Listeners</h2>
-            <Headphones className="w-8 h-8 md:w-10 md:h-10 text-indigo-500" />
+            <Headphones className="w-8 h-8 md:w-10 md:h-10 text-brand-500 drop-shadow-[0_0_8px_rgba(0,229,255,0.4)]" />
           </div>
           <p className="text-gray-400 max-w-2xl mx-auto mb-8">
             Join thousands of professionals who are upgrading their communication skills.
           </p>
-          
+
           <button
             onClick={() => setIsReviewModalOpen(true)}
             className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-full font-medium transition-colors border border-white/10 backdrop-blur-sm"
           >
-            <Plus className="w-5 h-5 text-indigo-400" />
+            <Plus className="w-5 h-5 text-brand-400" />
             Add Your Story
           </button>
         </div>
@@ -78,11 +78,11 @@ export default function Testimonials() {
                 transition={{ duration: 0.4 }}
                 className="bg-white/5 border border-white/10 p-8 rounded-2xl relative group hover:bg-white/[0.07] transition-colors"
               >
-                <Quote className="absolute top-8 right-8 w-8 h-8 text-indigo-500/20 group-hover:text-indigo-500/40 transition-colors" />
-                
+                <Quote className="absolute top-8 right-8 w-8 h-8 text-brand-500/10 group-hover:text-brand-500/40 transition-colors" />
+
                 <div className="flex items-center gap-4 mb-6">
-                  <img 
-                    src={testimonial.image} 
+                  <img
+                    src={testimonial.image}
                     alt={testimonial.author}
                     className="w-12 h-12 rounded-full object-cover border border-white/10"
                     referrerPolicy="no-referrer"
@@ -92,16 +92,16 @@ export default function Testimonials() {
                   />
                   <div>
                     <h4 className="font-semibold text-white">{testimonial.author}</h4>
-                    <p className="text-sm text-indigo-400">{testimonial.role}</p>
+                    <p className="text-sm text-brand-400/80">{testimonial.role}</p>
                   </div>
                 </div>
-                
+
                 <div className="flex gap-1 mb-4">
                   {[1, 2, 3, 4, 5].map((i) => (
                     <Star key={i} className="w-4 h-4 fill-yellow-500 text-yellow-500" />
                   ))}
                 </div>
-                
+
                 <p className="text-gray-300 leading-relaxed italic">
                   "{testimonial.quote}"
                 </p>

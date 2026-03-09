@@ -84,7 +84,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
           {/* Header */}
           <div className="flex items-center justify-between p-6 border-b border-white/10 bg-zinc-900/50 backdrop-blur-md z-10">
             <div className="flex items-center gap-3">
-              <Mail className="w-6 h-6 text-indigo-500" />
+              <Mail className="w-6 h-6 text-brand-500" />
               <h2 className="text-xl font-bold font-display">Contact Us</h2>
             </div>
             <button 
@@ -115,7 +115,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                       required
                       value={formState.name}
                       onChange={(e) => setFormState({...formState, name: e.target.value})}
-                      className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-indigo-500 transition-colors"
+                      className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-brand-500 transition-colors"
                       placeholder="John Doe"
                     />
                   </div>
@@ -126,7 +126,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                       required
                       value={formState.email}
                       onChange={(e) => setFormState({...formState, email: e.target.value})}
-                      className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-indigo-500 transition-colors"
+                      className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-brand-500 transition-colors"
                       placeholder="john@example.com"
                     />
                   </div>
@@ -141,7 +141,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                       required
                       value={formState.subject}
                       onChange={(e) => setFormState({...formState, subject: e.target.value})}
-                      className="w-full bg-black/50 border border-white/10 rounded-lg pl-10 pr-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-indigo-500 transition-colors"
+                      className="w-full bg-black/50 border border-white/10 rounded-lg pl-10 pr-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-brand-500 transition-colors"
                       placeholder="How can we help?"
                     />
                   </div>
@@ -154,7 +154,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                     rows={4}
                     value={formState.message}
                     onChange={(e) => setFormState({...formState, message: e.target.value})}
-                    className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-indigo-500 transition-colors resize-none"
+                    className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-brand-500 transition-colors resize-none"
                     placeholder="Tell us more about your inquiry..."
                   />
                 </div>
@@ -162,7 +162,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-3 rounded-xl font-semibold transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full bg-brand-600 hover:bg-brand-700 text-white py-3 rounded-xl font-semibold transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? "Sending..." : "Send Message"}
                 </button>

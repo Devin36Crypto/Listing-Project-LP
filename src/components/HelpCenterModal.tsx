@@ -71,7 +71,7 @@ export default function HelpCenterModal({ isOpen, onClose, onContactSupport }: H
                 placeholder="Search for help articles..." 
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full bg-white/5 border border-white/10 rounded-xl pl-12 pr-4 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-indigo-500 transition-colors"
+                className="w-full bg-white/5 border border-white/10 rounded-xl pl-12 pr-4 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-brand-500 transition-colors"
               />
             </div>
 
@@ -79,13 +79,13 @@ export default function HelpCenterModal({ isOpen, onClose, onContactSupport }: H
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
               {categories.map((category, index) => (
                 <div key={index} className="bg-white/5 border border-white/10 rounded-xl p-6 hover:bg-white/[0.07] transition-colors group cursor-pointer">
-                  <div className="w-10 h-10 bg-indigo-500/20 rounded-lg flex items-center justify-center mb-4 text-indigo-400 group-hover:text-indigo-300 transition-colors">
+                  <div className="w-10 h-10 bg-brand-500/20 rounded-lg flex items-center justify-center mb-4 text-brand-400 group-hover:text-brand-300 transition-colors">
                     <category.icon className="w-5 h-5" />
                   </div>
                   <h3 className="text-lg font-semibold text-white mb-4">{category.title}</h3>
                   <ul className="space-y-3">
                     {category.articles.map((article, aIndex) => (
-                      <li key={aIndex} className="text-sm text-gray-400 hover:text-indigo-400 transition-colors flex items-center gap-2">
+                      <li key={aIndex} className="text-sm text-gray-400 hover:text-brand-400 transition-colors flex items-center gap-2">
                         <ChevronRight className="w-3 h-3" />
                         {article}
                       </li>
@@ -96,12 +96,12 @@ export default function HelpCenterModal({ isOpen, onClose, onContactSupport }: H
             </div>
 
             {/* Contact Support CTA */}
-            <div className="bg-indigo-600/10 border border-indigo-500/20 rounded-xl p-8 text-center">
+            <div className="bg-brand-600/10 border border-brand-500/20 rounded-xl p-8 text-center">
               <h3 className="text-xl font-bold text-white mb-2">Still need help?</h3>
-              <p className="text-indigo-200 mb-6">Our support team is available 24/7 to assist you with any questions.</p>
+              <p className="text-brand-200 mb-6">Our support team is available 24/7 to assist you with any questions.</p>
               <button 
                 onClick={onContactSupport}
-                className="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-full font-semibold transition-colors"
+                className="bg-brand-600 hover:bg-brand-700 text-white px-6 py-3 rounded-full font-semibold transition-colors"
               >
                 Contact Support
               </button>

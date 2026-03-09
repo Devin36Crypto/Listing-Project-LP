@@ -84,13 +84,13 @@ export default function ChatWidget() {
             className="mb-4 w-80 sm:w-96 bg-[#1a1a1a] border border-white/10 rounded-2xl shadow-2xl overflow-hidden flex flex-col h-[500px]"
           >
             {/* Header */}
-            <div className="p-4 bg-indigo-600 flex items-center justify-between">
+            <div className="p-4 bg-brand-600 flex items-center justify-between">
               <div className="flex items-center gap-2 text-white">
                 <Bot className="w-5 h-5" />
                 <div className="flex flex-col">
                   <span className="font-medium leading-none">AI Assistant</span>
                   {isSecure && (
-                    <span className="text-[10px] text-indigo-200 flex items-center gap-1 mt-1">
+                    <span className="text-[10px] text-brand-200 flex items-center gap-1 mt-1">
                       <ShieldCheck className="w-3 h-3" />
                       AES-256 Encrypted
                     </span>
@@ -100,14 +100,14 @@ export default function ChatWidget() {
               <div className="flex items-center gap-2">
                 <button
                   onClick={clearHistory}
-                  className="p-1.5 rounded-lg bg-indigo-500/50 text-white/70 hover:text-white hover:bg-red-500/50 transition-colors"
+                  className="p-1.5 rounded-lg bg-brand-500/50 text-white/70 hover:text-white hover:bg-red-500/50 transition-colors"
                   title="Securely Clear History"
                 >
                   <Trash2 className="w-4 h-4" />
                 </button>
                 <button
                   onClick={() => setUseThinking(!useThinking)}
-                  className={`p-1.5 rounded-lg transition-colors ${useThinking ? 'bg-white text-indigo-600' : 'bg-indigo-500/50 text-white/70 hover:text-white'}`}
+                  className={`p-1.5 rounded-lg transition-colors ${useThinking ? 'bg-white text-brand-600' : 'bg-brand-500/50 text-white/70 hover:text-white'}`}
                   title="Toggle Deep Thinking Mode"
                 >
                   <Sparkles className="w-4 h-4" />
@@ -125,7 +125,7 @@ export default function ChatWidget() {
                   <div
                     className={`max-w-[85%] p-3 rounded-2xl text-sm ${
                       msg.role === "user"
-                        ? "bg-indigo-600 text-white rounded-tr-none"
+                        ? "bg-brand-600 text-white rounded-tr-none"
                         : "bg-white/10 text-gray-200 rounded-tl-none"
                     }`}
                   >
@@ -136,7 +136,7 @@ export default function ChatWidget() {
               {isLoading && (
                 <div className="flex justify-start">
                   <div className="bg-white/10 p-3 rounded-2xl rounded-tl-none flex items-center gap-2">
-                    <Loader2 className="w-4 h-4 animate-spin text-indigo-400" />
+                    <Loader2 className="w-4 h-4 animate-spin text-brand-400" />
                     <span className="text-xs text-gray-400">Thinking...</span>
                   </div>
                 </div>
@@ -153,12 +153,12 @@ export default function ChatWidget() {
                   onChange={(e) => setInput(e.target.value)}
                   onKeyDown={(e) => e.key === "Enter" && handleSend()}
                   placeholder="Ask a question..."
-                  className="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-2 text-sm text-white focus:outline-none focus:border-indigo-500 transition-colors"
+                  className="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-2 text-sm text-white focus:outline-none focus:border-brand-500 transition-colors"
                 />
                 <button
                   onClick={handleSend}
                   disabled={isLoading || !input.trim()}
-                  className="bg-indigo-600 hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed text-white p-2 rounded-xl transition-colors"
+                  className="bg-brand-600 hover:bg-brand-700 disabled:opacity-50 disabled:cursor-not-allowed text-white p-2 rounded-xl transition-colors"
                 >
                   <Send className="w-5 h-5" />
                 </button>
@@ -178,7 +178,7 @@ export default function ChatWidget() {
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         onClick={() => setIsOpen(!isOpen)}
-        className="bg-indigo-600 hover:bg-indigo-700 text-white p-4 rounded-full shadow-lg flex items-center justify-center transition-colors relative"
+        className="bg-brand-600 hover:bg-brand-700 text-white p-4 rounded-full shadow-lg flex items-center justify-center transition-colors relative"
       >
         {isOpen ? <User className="w-6 h-6" /> : <Bot className="w-6 h-6" />}
         <div className="absolute -top-1 -right-1 bg-green-500 rounded-full p-1 border-2 border-black" title="Encrypted">

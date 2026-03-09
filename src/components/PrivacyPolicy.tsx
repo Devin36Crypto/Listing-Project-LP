@@ -31,7 +31,7 @@ export default function PrivacyPolicy({ isOpen, onClose }: PrivacyPolicyProps) {
           {/* Header */}
           <div className="flex items-center justify-between p-6 border-b border-white/10 bg-zinc-900/50 backdrop-blur-md z-10">
             <div className="flex items-center gap-3">
-              <Shield className="w-6 h-6 text-indigo-500" />
+              <Shield className="w-6 h-6 text-brand-500" />
               <h2 className="text-xl font-bold font-display">Privacy Policy</h2>
             </div>
             <button 
@@ -44,8 +44,8 @@ export default function PrivacyPolicy({ isOpen, onClose }: PrivacyPolicyProps) {
 
           {/* Content */}
           <div className="overflow-y-auto p-6 md:p-10 space-y-8 text-gray-300 leading-relaxed custom-scrollbar">
-            <div className="bg-indigo-500/10 border border-indigo-500/20 rounded-xl p-4 mb-8">
-              <p className="text-sm text-indigo-300">
+            <div className="bg-brand-500/10 border border-brand-500/20 rounded-xl p-4 mb-8">
+              <p className="text-sm text-brand-300">
                 <strong>Last Updated:</strong> March 1, 2026 <br />
                 <strong>Effective Date:</strong> March 1, 2026
               </p>
@@ -65,7 +65,7 @@ export default function PrivacyPolicy({ isOpen, onClose }: PrivacyPolicyProps) {
 
             <section>
               <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
-                <FileText className="w-5 h-5 text-indigo-400" />
+                <FileText className="w-5 h-5 text-brand-400" />
                 2. Information We Collect & Local Storage
               </h3>
               <ul className="list-disc pl-5 space-y-2">
@@ -89,7 +89,7 @@ export default function PrivacyPolicy({ isOpen, onClose }: PrivacyPolicyProps) {
 
             <section>
               <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
-                <Server className="w-5 h-5 text-indigo-400" />
+                <Server className="w-5 h-5 text-brand-400" />
                 3. How We Use Your Information
               </h3>
               <p>We use the collected data for the following purposes:</p>
@@ -104,7 +104,7 @@ export default function PrivacyPolicy({ isOpen, onClose }: PrivacyPolicyProps) {
 
             <section>
               <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
-                <Eye className="w-5 h-5 text-indigo-400" />
+                <Eye className="w-5 h-5 text-brand-400" />
                 4. AI Processing & Third Parties
               </h3>
               <p>
@@ -117,7 +117,7 @@ export default function PrivacyPolicy({ isOpen, onClose }: PrivacyPolicyProps) {
 
             <section>
               <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
-                <Lock className="w-5 h-5 text-indigo-400" />
+                <Lock className="w-5 h-5 text-brand-400" />
                 5. Data Security & Encryption
               </h3>
               <p>
@@ -177,7 +177,7 @@ export default function PrivacyPolicy({ isOpen, onClose }: PrivacyPolicyProps) {
               <p>
                 If you have any questions about this Privacy Policy, please contact us:
               </p>
-              <p className="mt-2 text-indigo-400">
+              <p className="mt-2 text-brand-400">
                 By email: privacy@listeningproject.com
               </p>
             </section>
