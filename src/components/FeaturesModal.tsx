@@ -1,8 +1,8 @@
 import { motion, AnimatePresence } from "motion/react";
-import { 
-  X, Brain, Mic, MessageSquare, Zap, Shield, Globe, Smartphone, 
-  Volume2, WifiOff, Layers, Users, Database, Search, Download, 
-  Type, Monitor, Lock, AudioWaveform, Scan
+import {
+  X, Brain, Mic, MessageSquare, Zap, Shield, Globe, Smartphone,
+  Volume2, WifiOff, Layers, Users, Database, Search, Download,
+  Type, Monitor, Lock, AudioWaveform, Scan, Cloud
 } from "lucide-react";
 
 interface FeaturesModalProps {
@@ -50,17 +50,17 @@ export default function FeaturesModal({ isOpen, onClose }: FeaturesModalProps) {
         {
           icon: Database,
           title: "Local-First Architecture",
-          description: "All session data is stored locally on your device, not in the cloud."
+          description: "All session data is stored locally on your device by default, ensuring maximum privacy."
         },
         {
-          icon: Shield,
-          title: "Zero-Knowledge Encryption",
-          description: "Secure your transcripts with a personal Vault Key that ensures only you can access your history."
+          icon: Lock,
+          title: "Personal Vault Keys",
+          description: "Generate a local Vault Key to encrypt your transcripts with AES-256. We have zero knowledge of your key."
         },
         {
-          icon: Smartphone,
-          title: "Pocket Mode",
-          description: "Lock your screen while keeping the microphone active for discreet, battery-saving operation."
+          icon: Cloud,
+          title: "Encrypted Cloud Sync",
+          description: "Optional cloud backup that maintains end-to-end encryption. Only your Vault Key can unlock the data."
         }
       ]
     },
@@ -134,11 +134,11 @@ export default function FeaturesModal({ isOpen, onClose }: FeaturesModalProps) {
         exit={{ opacity: 0 }}
         className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6"
       >
-        <div 
-          className="absolute inset-0 bg-black/80 backdrop-blur-sm" 
+        <div
+          className="absolute inset-0 bg-black/80 backdrop-blur-sm"
           onClick={onClose}
         />
-        
+
         <motion.div
           initial={{ opacity: 0, scale: 0.95, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -148,10 +148,10 @@ export default function FeaturesModal({ isOpen, onClose }: FeaturesModalProps) {
           {/* Header */}
           <div className="flex items-center justify-between p-6 border-b border-white/10 bg-zinc-900/50 backdrop-blur-md z-10">
             <div className="flex items-center gap-3">
-              <Zap className="w-6 h-6 text-indigo-500" />
+              <Zap className="w-6 h-6 text-brand-500" />
               <h2 className="text-xl font-bold font-display">All Features</h2>
             </div>
-            <button 
+            <button
               onClick={onClose}
               className="p-2 hover:bg-white/10 rounded-full transition-colors text-gray-400 hover:text-white"
             >
@@ -164,16 +164,16 @@ export default function FeaturesModal({ isOpen, onClose }: FeaturesModalProps) {
             <div className="space-y-12">
               {categories.map((category, catIndex) => (
                 <div key={catIndex}>
-                  <h3 className="text-lg font-bold text-white mb-6 pl-3 border-l-4 border-indigo-500 flex items-center gap-2">
+                  <h3 className="text-lg font-bold text-white mb-6 pl-3 border-l-4 border-brand-500 flex items-center gap-2">
                     {category.title}
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {category.features.map((feature, index) => (
-                      <div 
+                      <div
                         key={index}
                         className="bg-white/5 border border-white/10 rounded-xl p-6 hover:bg-white/[0.07] transition-colors group"
                       >
-                        <div className="w-12 h-12 bg-indigo-500/10 rounded-lg flex items-center justify-center mb-4 text-indigo-400 group-hover:text-indigo-300 group-hover:bg-indigo-500/20 transition-colors">
+                        <div className="w-12 h-12 bg-brand-500/10 rounded-lg flex items-center justify-center mb-4 text-brand-400 group-hover:text-brand-300 group-hover:bg-brand-500/20 transition-colors">
                           <feature.icon className="w-6 h-6" />
                         </div>
                         <h3 className="text-lg font-semibold text-white mb-2">{feature.title}</h3>
@@ -186,15 +186,15 @@ export default function FeaturesModal({ isOpen, onClose }: FeaturesModalProps) {
                 </div>
               ))}
             </div>
-            
-            <div className="mt-16 p-8 bg-indigo-600/10 border border-indigo-500/20 rounded-2xl text-center">
+
+            <div className="mt-16 p-8 bg-brand-600/10 border border-brand-500/20 rounded-2xl text-center">
               <h3 className="text-xl font-bold text-white mb-2">Ready to experience better listening?</h3>
-              <p className="text-indigo-200 mb-6 max-w-xl mx-auto">
+              <p className="text-brand-200 mb-6 max-w-xl mx-auto">
                 Join thousands of users who have transformed their communication skills with the Listening Project.
               </p>
-              <button 
+              <button
                 onClick={onClose}
-                className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-full font-semibold transition-colors shadow-lg shadow-indigo-500/20"
+                className="bg-brand-600 hover:bg-brand-700 text-white px-8 py-3 rounded-full font-semibold transition-colors shadow-lg shadow-brand-500/20"
               >
                 Get Started Now
               </button>

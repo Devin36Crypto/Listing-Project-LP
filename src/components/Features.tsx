@@ -1,36 +1,36 @@
 import { motion } from "motion/react";
-import { Brain, Mic, MessageSquare, Zap, Shield, Globe } from "lucide-react";
+import { Brain, Mic, MessageSquare, Zap, Shield, Globe, Users, Cloud } from "lucide-react";
 
 const features = [
   {
-    icon: Brain,
-    title: "Deep Understanding",
-    description: "Our AI analyzes context, tone, and nuance to provide deeper insights into your conversations."
-  },
-  {
-    icon: Mic,
-    title: "Crystal Clear Audio",
-    description: "Advanced noise cancellation and audio enhancement for pristine recording quality."
-  },
-  {
-    icon: MessageSquare,
-    title: "Smart Summaries",
-    description: "Get instant summaries and action items from your meetings and discussions."
-  },
-  {
-    icon: Zap,
-    title: "Real-time Processing",
-    description: "Experience zero-latency transcription and analysis as you speak."
+    icon: Globe,
+    title: "Universal Translator",
+    description: "Instantly translate spoken audio into your target language with near-zero latency using Gemini Flash."
   },
   {
     icon: Shield,
-    title: "Military-Grade Encryption",
-    description: "Your data is secured with AES-256 encryption. We employ a Zero-Knowledge architecture where possible, ensuring only you have access to your data."
+    title: "Private Vault Keys",
+    description: "Secure your session history with a local Vault Key. Only you hold the key to decrypt your personal data."
   },
   {
-    icon: Globe,
-    title: "Live Voice Translation",
-    description: "Seamlessly translate and understand conversations in real-time across over 30 languages."
+    icon: Zap,
+    title: "Offline Intelligence",
+    description: "Continue recording and transcribing even without a connection using optimized on-device neural models."
+  },
+  {
+    icon: Brain,
+    title: "AI Audio Insights",
+    description: "Ask questions about any conversation or extract action items with context-aware AI analysis."
+  },
+  {
+    icon: Users,
+    title: "Spatial Peer Sync",
+    description: "Discover nearby users for synchronized group translation sessions and shared session contexts."
+  },
+  {
+    icon: Cloud,
+    title: "Encrypted Cloud Sync",
+    description: "Securely backup your encrypted sessions to the cloud and sync across all your devices seamlessly."
   }
 ];
 
