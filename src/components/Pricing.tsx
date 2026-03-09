@@ -92,7 +92,7 @@ export default function Pricing({ onPlanSelect }: PricingProps) {
     <section id="pricing" className="py-24 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-indigo-900/10 rounded-full blur-[120px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-900/10 rounded-full blur-[120px]" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -101,8 +101,8 @@ export default function Pricing({ onPlanSelect }: PricingProps) {
           <p className="text-gray-400 max-w-2xl mx-auto mb-8">
             Download for free. Try everything for 3 days. Then choose the plan that works for you.
           </p>
-          
-          <div className="inline-flex items-center gap-2 bg-indigo-500/10 border border-indigo-500/20 rounded-full px-4 py-2 text-indigo-300 text-sm">
+
+          <div className="inline-flex items-center gap-2 bg-brand-500/10 border border-brand-500/20 rounded-full px-4 py-2 text-brand-400 text-sm">
             <Smartphone className="w-4 h-4" />
             <span>One active device per subscription</span>
           </div>
@@ -116,14 +116,13 @@ export default function Pricing({ onPlanSelect }: PricingProps) {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
               viewport={{ once: true }}
-              className={`relative p-8 rounded-3xl border flex flex-col ${
-                plan.popular 
-                  ? "bg-white/10 border-indigo-500/50 shadow-2xl shadow-indigo-500/10" 
+              className={`relative p-8 rounded-3xl border flex flex-col ${plan.popular
+                  ? "bg-white/10 border-brand-500/50 shadow-2xl shadow-brand-500/10"
                   : "bg-white/5 border-white/10 hover:bg-white/[0.07] transition-colors"
-              }`}
+                }`}
             >
               {plan.popular && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-indigo-600 text-white px-4 py-1 rounded-full text-sm font-medium shadow-lg">
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-500 text-black px-4 py-1 rounded-full text-sm font-bold shadow-lg shadow-brand-500/20">
                   Best Value
                 </div>
               )}
@@ -140,19 +139,19 @@ export default function Pricing({ onPlanSelect }: PricingProps) {
               </div>
 
               <div className="flex-1 space-y-4 mb-8">
-                <div className="bg-indigo-500/10 rounded-xl p-4 mb-6 border border-indigo-500/20">
-                  <div className="flex items-center gap-3 text-indigo-300 font-medium">
+                <div className="bg-brand-500/10 rounded-xl p-4 mb-6 border border-brand-500/20">
+                  <div className="flex items-center gap-3 text-brand-400 font-medium">
                     <Calendar className="w-5 h-5" />
                     <span>3-Day Free Trial Included</span>
                   </div>
-                  <p className="text-xs text-indigo-400/70 mt-1 ml-8">
+                  <p className="text-xs text-brand-400/70 mt-1 ml-8">
                     You won't be charged until your trial ends.
                   </p>
                 </div>
 
                 {plan.features.map((feature, i) => (
                   <div key={i} className="flex items-start gap-3 text-sm text-gray-200">
-                    <Check className="w-5 h-5 text-indigo-400 shrink-0" />
+                    <Check className="w-5 h-5 text-brand-400 shrink-0" />
                     <span>{feature}</span>
                   </div>
                 ))}
@@ -160,11 +159,11 @@ export default function Pricing({ onPlanSelect }: PricingProps) {
 
               <button
                 onClick={() => onPlanSelect?.(plan.variant as any, plan.planId)}
-                className="w-full py-4 rounded-xl font-medium transition-all text-lg bg-indigo-600 hover:bg-indigo-700 text-white shadow-lg hover:shadow-indigo-500/25"
+                className="w-full py-4 rounded-xl font-bold transition-all text-lg bg-brand-500 hover:bg-brand-600 text-black shadow-lg hover:shadow-brand-500/25"
               >
                 {plan.cta}
               </button>
-              
+
               <p className="text-center text-xs text-gray-500 mt-4">
                 Renews automatically. Cancel anytime.
               </p>

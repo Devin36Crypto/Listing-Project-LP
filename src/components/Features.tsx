@@ -55,7 +55,7 @@ export default function Features() {
               viewport={{ once: true }}
               className="p-8 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
             >
-              <div className="w-12 h-12 bg-indigo-500/20 rounded-xl flex items-center justify-center mb-6 text-indigo-400">
+              <div className="w-12 h-12 bg-brand-500/10 rounded-xl flex items-center justify-center mb-6 text-brand-400">
                 <feature.icon className="w-6 h-6" />
               </div>
               <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>

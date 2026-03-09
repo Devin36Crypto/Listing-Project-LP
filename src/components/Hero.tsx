@@ -16,10 +16,10 @@ function AnimatedCounter({ value }: { value: number }) {
     const animate = (currentTime: number) => {
       const elapsed = currentTime - startTime;
       const progress = Math.min(elapsed / duration, 1);
-      
+
       // Ease out quart
       const ease = 1 - Math.pow(1 - progress, 4);
-      
+
       const current = Math.floor(start + (end - start) * ease);
       setDisplayValue(current);
 
@@ -47,7 +47,7 @@ export default function Hero({ onOpenDownload }: { onOpenDownload: (variant: "au
     async function fetchStats() {
       try {
         const { weekly, total } = await getDownloadStats();
-        
+
         const now = new Date();
         const oneYearAfterLaunch = new Date(LAUNCH_DATE);
         oneYearAfterLaunch.setFullYear(oneYearAfterLaunch.getFullYear() + 1);
@@ -73,29 +73,29 @@ export default function Hero({ onOpenDownload }: { onOpenDownload: (variant: "au
     <section id="download" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
       {/* Background Gradients */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-indigo-600/20 rounded-full blur-[128px]" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-[128px]" />
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-brand-500/10 rounded-full blur-[128px]" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-sky-500/5 rounded-full blur-[128px]" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div>
-          <span className="inline-block py-1 px-3 rounded-full bg-white/5 border border-white/10 text-sm text-indigo-300 mb-6 backdrop-blur-sm">
+          <span className="inline-block py-1 px-3 rounded-full bg-white/5 border border-white/10 text-sm text-brand-400 mb-6 backdrop-blur-sm">
             The Future of Active Listening
           </span>
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 font-display">
             <span className="inline-flex items-center gap-3 sm:gap-5">
-              <Headphones className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 text-indigo-500" />
+              <Headphones className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 text-brand-500 drop-shadow-[0_0_8px_rgba(0,229,255,0.4)]" />
               Hear More.
             </span>
             <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-sky-400">
               Understand Better.
             </span>
           </h1>
           <p className="mt-4 text-xl text-gray-400 max-w-2xl mx-auto mb-8">
             The Listening Project uses advanced AI to help you capture, analyze, and truly understand every conversation. Available now on Android and Desktop.
           </p>
-          
+
           {/* Animated Stat */}
           <div className="flex justify-center mb-10">
             <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 backdrop-blur-md min-h-[40px]">
@@ -113,7 +113,7 @@ export default function Hero({ onOpenDownload }: { onOpenDownload: (variant: "au
               </span>
             </div>
           </div>
-          
+
           <div className="flex flex-wrap justify-center gap-4 mb-10">
             <span className="inline-flex items-center gap-1.5 py-1 px-3 rounded-full bg-green-500/10 border border-green-500/20 text-xs font-medium text-green-400">
               <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -128,10 +128,10 @@ export default function Hero({ onOpenDownload }: { onOpenDownload: (variant: "au
               GDPR Compliant
             </span>
           </div>
-          
+
           <div className="flex flex-col items-center gap-6">
             <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4 w-full">
-              <button 
+              <button
                 onClick={() => onOpenDownload("mobile")}
                 className="flex items-center gap-2 bg-white/10 text-white border border-white/10 px-8 py-4 rounded-full font-semibold hover:bg-white/20 transition-colors backdrop-blur-sm w-full sm:w-auto justify-center"
               >
@@ -139,7 +139,7 @@ export default function Hero({ onOpenDownload }: { onOpenDownload: (variant: "au
                 Download for Mobile
               </button>
 
-              <button 
+              <button
                 onClick={() => onOpenDownload("desktop")}
                 className="flex items-center gap-2 bg-white/10 text-white border border-white/10 px-8 py-4 rounded-full font-semibold hover:bg-white/20 transition-colors backdrop-blur-sm w-full sm:w-auto justify-center"
               >
@@ -148,7 +148,7 @@ export default function Hero({ onOpenDownload }: { onOpenDownload: (variant: "au
               </button>
             </div>
 
-            <button 
+            <button
               onClick={() => onOpenDownload("tablet")}
               className="flex items-center gap-2 bg-white/10 text-white border border-white/10 px-8 py-4 rounded-full font-semibold hover:bg-white/20 transition-colors backdrop-blur-sm w-full sm:w-auto justify-center"
             >
@@ -156,7 +156,7 @@ export default function Hero({ onOpenDownload }: { onOpenDownload: (variant: "au
               Download for Tablet
             </button>
           </div>
-          
+
           <p className="mt-6 text-sm text-gray-500">
             iOS version coming soon.
           </p>
