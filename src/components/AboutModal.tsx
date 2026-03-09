@@ -31,7 +31,7 @@ export default function AboutModal({ isOpen, onClose }: AboutModalProps) {
           {/* Header */}
           <div className="flex items-center justify-between p-6 border-b border-white/10 bg-zinc-900/50 backdrop-blur-md z-10">
             <div className="flex items-center gap-3">
-              <Cpu className="w-6 h-6 text-brand-500" />
+              <Cpu className="w-6 h-6 text-brand-500" style={{ color: '#00e5ff' }} />
               <h2 className="text-xl font-bold font-display text-white">About The Listening Project</h2>
             </div>
             <button
@@ -59,7 +59,7 @@ export default function AboutModal({ isOpen, onClose }: AboutModalProps) {
               {/* The Mission */}
               <div className="bg-white/5 border border-white/10 rounded-2xl p-8">
                 <h4 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                  <Activity className="w-5 h-5 text-brand-400" />
+                  <Activity className="w-5 h-5 text-brand-400" style={{ color: '#33eaff' }} />
                   The Mission
                 </h4>
                 <p className="text-gray-300 leading-relaxed">
@@ -70,7 +70,7 @@ export default function AboutModal({ isOpen, onClose }: AboutModalProps) {
               {/* The Architecture */}
               <div>
                 <h4 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                  <Layers className="w-5 h-5 text-brand-400" />
+                  <Layers className="w-5 h-5 text-brand-400" style={{ color: '#33eaff' }} />
                   The Architecture
                 </h4>
                 <p className="text-gray-400 mb-6">
@@ -78,21 +78,21 @@ export default function AboutModal({ isOpen, onClose }: AboutModalProps) {
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div className="bg-white/5 border border-white/10 p-5 rounded-xl">
-                    <div className="bg-brand-500/10 w-10 h-10 rounded-lg flex items-center justify-center mb-3 text-brand-400">
+                    <div className="bg-brand-500/10 w-10 h-10 rounded-lg flex items-center justify-center mb-3 text-brand-400" style={{ color: '#33eaff', backgroundColor: 'rgba(0,229,255,0.1)' }}>
                       <Zap className="w-5 h-5" />
                     </div>
                     <h5 className="font-semibold text-white mb-2">Neural Diarization</h5>
                     <p className="text-sm text-gray-400">Instantly distinguishes and labels multiple speakers in a single audio stream.</p>
                   </div>
                   <div className="bg-white/5 border border-white/10 p-5 rounded-xl">
-                    <div className="bg-brand-500/10 w-10 h-10 rounded-lg flex items-center justify-center mb-3 text-brand-400">
+                    <div className="bg-brand-500/10 w-10 h-10 rounded-lg flex items-center justify-center mb-3 text-brand-400" style={{ color: '#33eaff', backgroundColor: 'rgba(0,229,255,0.1)' }}>
                       <Activity className="w-5 h-5" />
                     </div>
                     <h5 className="font-semibold text-white mb-2">Adaptive Beamforming</h5>
                     <p className="text-sm text-gray-400">Software-defined noise suppression isolates voices in chaotic acoustic environments.</p>
                   </div>
                   <div className="bg-white/5 border border-white/10 p-5 rounded-xl">
-                    <div className="bg-brand-500/10 w-10 h-10 rounded-lg flex items-center justify-center mb-3 text-brand-400">
+                    <div className="bg-brand-500/10 w-10 h-10 rounded-lg flex items-center justify-center mb-3 text-brand-400" style={{ color: '#33eaff', backgroundColor: 'rgba(0,229,255,0.1)' }}>
                       <Server className="w-5 h-5" />
                     </div>
                     <h5 className="font-semibold text-white mb-2">Hybrid Inference</h5>

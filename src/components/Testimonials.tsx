@@ -51,7 +51,7 @@ export default function Testimonials() {
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-4">
             <h2 className="text-3xl md:text-5xl font-bold font-display">Trusted by Better Listeners</h2>
-            <Headphones className="w-8 h-8 md:w-10 md:h-10 text-brand-500 drop-shadow-[0_0_8px_rgba(0,229,255,0.4)]" />
+            <Headphones className="w-8 h-8 md:w-10 md:h-10 text-brand-500" style={{ color: '#00e5ff', filter: 'drop-shadow(0 0 8px rgba(0,229,255,0.4))' }} />
           </div>
           <p className="text-gray-400 max-w-2xl mx-auto mb-8">
             Join thousands of professionals who are upgrading their communication skills.
@@ -61,7 +61,7 @@ export default function Testimonials() {
             onClick={() => setIsReviewModalOpen(true)}
             className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-full font-medium transition-colors border border-white/10 backdrop-blur-sm"
           >
-            <Plus className="w-5 h-5 text-brand-400" />
+            <Plus className="w-5 h-5 text-brand-400" style={{ color: '#33eaff' }} />
             Add Your Story
           </button>
         </div>
@@ -78,7 +78,7 @@ export default function Testimonials() {
                 transition={{ duration: 0.4 }}
                 className="bg-white/5 border border-white/10 p-8 rounded-2xl relative group hover:bg-white/[0.07] transition-colors"
               >
-                <Quote className="absolute top-8 right-8 w-8 h-8 text-brand-500/10 group-hover:text-brand-500/40 transition-colors" />
+                <Quote className="absolute top-8 right-8 w-8 h-8 text-brand-500/10 group-hover:text-brand-500/40 transition-colors" style={{ color: 'rgba(0,229,255,0.1)' }} />
 
                 <div className="flex items-center gap-4 mb-6">
                   <img
