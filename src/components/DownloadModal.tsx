@@ -124,6 +124,10 @@ export default function DownloadModal({
     setIsProcessing(true);
     setError(null);
     try {
+      if (supabase.auth.getSession === undefined || import.meta.env.VITE_SUPABASE_URL?.includes('placeholder')) {
+        throw new Error("Backend connection not configured. Please add SUPABASE_URL to your deployment settings.");
+      }
+      
       if (VIP_LIST.includes(email.trim())) {
         // Check if user already exists
         const { data: { user } } = await supabase.auth.getUser();
@@ -147,6 +151,10 @@ export default function DownloadModal({
     setIsProcessing(true);
     setError(null);
     try {
+      if (import.meta.env.VITE_SUPABASE_URL?.includes('placeholder')) {
+        throw new Error("Backend connection not configured.");
+      }
+      
       const { error: authError } = await supabase.auth.signUp({
         email,
         password,
