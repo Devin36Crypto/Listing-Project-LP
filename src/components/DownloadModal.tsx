@@ -476,27 +476,22 @@ export default function DownloadModal({
                 </div>
 
                 <div className="mb-8 p-6 bg-brand-600/10 border border-brand-500/20 rounded-xl text-center">
-                  <h3 className="text-lg font-semibold text-white mb-2">Ready to Use</h3>
-                  <p className="text-brand-200 mb-4 text-sm">
-                    {deferredPrompt ? "Install the app for the best experience or open it now." : "You can now open the app directly."}
+                  <h3 className="text-lg font-semibold text-white mb-2">Install Listening Project</h3>
+                  <p className="text-brand-200 mb-6 text-sm">
+                    Download the actual language app for your Android device or open the web version.
                   </p>
-                  <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                    {deferredPrompt && (
-                      <button
-                        onClick={handleInstallApp}
-                        className="bg-gradient-to-br from-brand-400 to-brand-600 text-black px-6 py-3 rounded-full font-bold transition-all hover:scale-[1.05] shadow-lg shadow-brand-500/25 flex items-center justify-center gap-2"
-                      >
-                        <Download className="w-5 h-5" />
-                        Install App
-                      </button>
-                    )}
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <a
-                      href="#"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        window.location.href = "https://app.listening-project.app/";
-                      }}
-                      className="bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-full font-semibold transition-colors flex items-center justify-center gap-2 border border-white/10"
+                      href="/downloads/listeningproject.apk"
+                      download="listeningproject.apk"
+                      className="bg-gradient-to-br from-brand-400 to-brand-600 text-black px-8 py-4 rounded-full font-bold transition-all hover:scale-[1.05] shadow-lg shadow-brand-500/25 flex items-center justify-center gap-2"
+                    >
+                      <Download className="w-5 h-5" />
+                      Download Android App (APK)
+                    </a>
+                    <a
+                      href="https://app.listening-project.app/"
+                      className="bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-full font-semibold transition-colors flex items-center justify-center gap-2 border border-white/10"
                     >
                       <Smartphone className="w-5 h-5" />
                       Open Web App
@@ -506,74 +501,39 @@ export default function DownloadModal({
 
                 {/* Manual Instructions Content */}
                 <div className="bg-white/5 border border-white/10 rounded-xl p-6">
-                  {activeTab === "android" && (
-                    <div className="space-y-4">
-                      <div className="flex items-start gap-4">
-                        <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0 font-bold text-brand-400">1</div>
-                        <div>
-                          <p className="text-white font-medium mb-1">Open Menu</p>
-                          <p className="text-sm text-gray-400 flex items-center gap-2">
-                            Tap the three dots <MoreVertical className="w-4 h-4 inline" /> in the top right of Chrome.
-                          </p>
-                        </div>
-                      </div>
-                      <div className="flex items-start gap-4">
-                        <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0 font-bold text-brand-400">2</div>
-                        <div>
-                          <p className="text-white font-medium mb-1">Install App</p>
-                          <p className="text-sm text-gray-400">
-                            Tap "Install app" or "Add to Home screen".
-                          </p>
-                        </div>
+                  <h4 className="text-white font-semibold mb-4 flex items-center gap-2">
+                    <Check className="w-4 h-4 text-brand-400" />
+                    Installation Guide
+                  </h4>
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-4">
+                      <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0 font-bold text-brand-400">1</div>
+                      <div>
+                        <p className="text-white font-medium mb-1">Download APK</p>
+                        <p className="text-sm text-gray-400">
+                          Tap the button above to download the `listeningproject.apk` file.
+                        </p>
                       </div>
                     </div>
-                  )}
-
-                  {activeTab === "desktop" && (
-                    <div className="space-y-4">
-                      <div className="flex items-start gap-4">
-                        <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0 font-bold text-brand-400">1</div>
-                        <div>
-                          <p className="text-white font-medium mb-1">Check Address Bar</p>
-                          <p className="text-sm text-gray-400 flex items-center gap-2">
-                            Look for the install icon <Download className="w-4 h-4 inline" /> on the right side of the address bar in Chrome or Edge.
-                          </p>
-                        </div>
-                      </div>
-                      <div className="flex items-start gap-4">
-                        <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0 font-bold text-brand-400">2</div>
-                        <div>
-                          <p className="text-white font-medium mb-1">Click Install</p>
-                          <p className="text-sm text-gray-400">
-                            Follow the prompt to install the app to your desktop.
-                          </p>
-                        </div>
+                    <div className="flex items-start gap-4">
+                      <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0 font-bold text-brand-400">2</div>
+                      <div>
+                        <p className="text-white font-medium mb-1">Enable "Unknown Sources"</p>
+                        <p className="text-sm text-gray-400">
+                          If prompted, allow your browser to install apps from "Unknown Sources" in your Android settings.
+                        </p>
                       </div>
                     </div>
-                  )}
-
-                  {activeTab === "ios" && (
-                     <div className="space-y-4">
-                     <div className="flex items-start gap-4">
-                       <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0 font-bold text-brand-400">1</div>
-                       <div>
-                         <p className="text-white font-medium mb-1">Tap Share</p>
-                         <p className="text-sm text-gray-400">
-                           Tap the share button in Safari.
-                         </p>
-                       </div>
-                     </div>
-                     <div className="flex items-start gap-4">
-                       <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0 font-bold text-brand-400">2</div>
-                       <div>
-                         <p className="text-white font-medium mb-1">Add to Home Screen</p>
-                         <p className="text-sm text-gray-400">
-                           Tap "Add to Home Screen".
-                         </p>
-                       </div>
-                     </div>
-                   </div>
-                  )}
+                    <div className="flex items-start gap-4">
+                      <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0 font-bold text-brand-400">3</div>
+                      <div>
+                        <p className="text-white font-medium mb-1">Install & Log In</p>
+                        <p className="text-sm text-gray-400">
+                          Open the downloaded file and follow the prompts to install. Use your newly created account to log in.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </motion.div>
             )}
