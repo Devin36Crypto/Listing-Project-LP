@@ -33,7 +33,7 @@ export default function Footer({
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center gap-2 mb-4">
               <Logo className="w-8 h-8" />
-              <h3 className="text-xl font-bold font-display">Listening Project</h3>
+              <h3 className="text-xl font-bold font-display">ListeningProject</h3>
             </div>
             <p className="text-gray-300 max-w-sm">
               Empowering better communication through AI-driven insights and active listening tools.
@@ -129,7 +129,7 @@ export default function Footer({
           <div className="flex items-center gap-2 text-brand-500/60 text-sm">
             <Headphones className="w-4 h-4 text-brand-400" />
             <p>
-              © {new Date().getFullYear()} Listening Project. All rights reserved.
+              © {new Date().getFullYear()} ListeningProject. All rights reserved.
             </p>
           </div>
 
