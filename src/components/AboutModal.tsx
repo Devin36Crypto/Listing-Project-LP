@@ -32,7 +32,7 @@ export default function AboutModal({ isOpen, onClose }: AboutModalProps) {
           <div className="flex items-center justify-between p-6 border-b border-white/10 bg-zinc-900/50 backdrop-blur-md z-10">
             <div className="flex items-center gap-3">
               <Cpu className="w-6 h-6 text-brand-500" />
-              <h2 className="text-xl font-bold font-display text-white">About The Listening Project</h2>
+              <h2 className="text-xl font-bold font-display text-white">About ListeningProjectLp</h2>
             </div>
             <button
               onClick={onClose}
@@ -65,7 +65,7 @@ export default function AboutModal({ isOpen, onClose }: AboutModalProps) {
                   The Mission
                 </h4>
                 <p className="text-gray-300 leading-relaxed">
-                  ListeningProject is a neural audio interface designed to decode the world around you. We bypass traditional, high-latency speech-to-text pipelines by leveraging the Gemini Multimodal Live API, delivering fluid, context-aware translation that understands nuance, tone, and speaker identity in real-time.
+                  ListeningProjectLp is a neural audio interface designed to decode the world around you. We bypass traditional, high-latency speech-to-text pipelines by leveraging the Gemini Multimodal Live API, delivering fluid, context-aware translation that understands nuance, tone, and speaker identity in real-time.
                 </p>
               </div>
 
@@ -76,7 +76,7 @@ export default function AboutModal({ isOpen, onClose }: AboutModalProps) {
                   The Architecture
                 </h4>
                 <p className="text-gray-400 mb-6">
-                  We built ListeningProject as a high-performance Progressive Web App (PWA) to bridge the gap between cloud intelligence and edge security.
+                  We built ListeningProjectLp as a high-performance Progressive Web App (PWA) to bridge the gap between cloud intelligence and edge security.
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div className="bg-white/5 border border-white/10 p-5 rounded-xl">

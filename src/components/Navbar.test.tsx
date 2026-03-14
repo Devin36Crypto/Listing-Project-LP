@@ -5,7 +5,7 @@ import Navbar from './Navbar';
 describe('Navbar Component', () => {
   it('renders branding', () => {
     render(<Navbar />);
-    expect(screen.getByText('ListeningProject')).toBeInTheDocument();
+    expect(screen.getByText('ListeningProjectLp')).toBeInTheDocument();
   });
 
   it('renders navigation links', () => {

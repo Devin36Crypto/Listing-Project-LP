@@ -43,7 +43,7 @@ app.post('/api/email', async (req, res) => {
 
   try {
     const { data, error } = await resend.emails.send({
-      from: 'ListeningProject <noreply@listening-project.app>', // Updated to official brand name
+      from: 'ListeningProjectLp <noreply@listening-project.app>', // Updated to official branding
       to: [to],
       subject: subject,
       html: html,

@@ -107,7 +107,7 @@ export default function Hero({ onOpenDownload }: { onOpenDownload: (variant: "au
             </span>
           </h1>
           <p className="mt-4 text-xl text-gray-400 max-w-2xl mx-auto mb-8">
-            ListeningProject uses advanced AI to help you capture, analyze, and truly understand every conversation. Available now on Android and Desktop.
+            ListeningProjectLp uses advanced AI to help you capture, analyze, and truly understand every conversation. Available now on Android and Desktop.
           </p>
 
           {/* Animated Stat */}

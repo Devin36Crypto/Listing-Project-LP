@@ -8,8 +8,8 @@ const AppHeader: React.FC = () => {
         <div className="flex items-center gap-2">
             <Sparkles className="text-blue-400" size={20} />
             <h1 className="font-bold text-lg tracking-tight">
-                <span className="text-white">Listening</span>
-                <span className="text-blue-400">project</span>
+                <span className="text-white">ListeningProject</span>
+                <span className="text-blue-400">Lp</span>
             </h1>
         </div>
       </div>

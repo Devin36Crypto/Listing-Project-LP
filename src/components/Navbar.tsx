@@ -11,7 +11,7 @@ export default function Navbar({ onOpenDownload }: { onOpenDownload?: () => void
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-3 cursor-pointer" onClick={() => window.location.reload()}>
             <Logo className="w-10 h-10" />
-            <span className="text-xl font-bold tracking-tight font-display">ListeningProject</span>
+            <span className="text-xl font-bold tracking-tight font-display">ListeningProjectLp</span>
           </div>
 
           <div className="hidden md:block">
