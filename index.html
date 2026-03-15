@@ -43,34 +43,7 @@
     </div>
   </div>
   <script type="module" src="/src/main.tsx"></script>
-  <script>
-    console.log('BOOTSTRAP: Initial HTML script running');
     
-    // Hide fallback UI once React mounts
-    const observer = new MutationObserver(function(mutations) {
-      const root = document.getElementById('root');
-      if (root && root.innerHTML !== "" && !root.querySelector('#fallback-ui')) {
-        console.log('BOOTSTRAP: Content detected in root, cleaning up fallback');
-        observer.disconnect();
-      }
-    });
-    
-    const rootElement = document.getElementById('root');
-    if (rootElement) {
-        observer.observe(rootElement, { childList: true });
-    }
-
-    window.onerror = function(msg, url, line, col, error) {
-      console.error('BOOTSTRAP: Global error caught:', msg, 'at', url, 'line', line);
-      const root = document.getElementById('root');
-      if (root) {
-        const errDiv = document.createElement('div');
-        errDiv.style = "color:#ff4444; font-size:10px; position:fixed; bottom:10px; left:10px; z-index:9999; background:rgba(0,0,0,0.8); padding:5px; border-radius:4px; max-width:80%; word-break:break-all;";
-        errDiv.textContent = 'Critical Error: ' + msg + ' (See console)';
-        document.body.appendChild(errDiv);
-      }
-    };
-  </script>
 </body>
 
 </html>

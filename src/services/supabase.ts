@@ -2,7 +2,14 @@ import { createClient } from '@supabase/supabase-js';
 
 const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || (isLocal ? `${window.location.origin}/supabase-api` : '');
-const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || import.meta.env.VITE_SUPABASE_PUBLISHABLE_DEFAULT_KEY || '';
+const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || '';
+
+if (!supabaseUrl || !supabaseAnonKey) {
+  console.error('SUPABASE ERROR: Missing environment variables. Please check Vercel settings for VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY.');
+}
+
+console.log('SUPABASE: URL =', supabaseUrl);
+console.log('SUPABASE: Key present =', !!supabaseAnonKey);
 
 // Initialize Supabase only if keys are present to prevent top-level crashes
 let supabaseInstance: any = null;

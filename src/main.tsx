@@ -1,3 +1,4 @@
+console.log('MAIN.TSX: Initialization started');
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import * as Sentry from '@sentry/react';
@@ -6,41 +7,29 @@ import App from './App';
 import ErrorBoundary from './components/ErrorBoundary';
 import './index.css';
 
-console.log('MAIN.TSX: Script loaded at top');
 
-// Initialize Sentry before rendering.
-// Only initializes if VITE_SENTRY_DSN is set — safe to omit in local dev.
-/*
-if (import.meta.env.VITE_SENTRY_DSN) {
-  Sentry.init({
-    dsn: import.meta.env.VITE_SENTRY_DSN,
-    environment: import.meta.env.MODE,         // 'development' or 'production'
-    tracesSampleRate: 1.0,                      // Capture 100% of transactions (lower in prod if needed)
-    replaysSessionSampleRate: 0.1,              // Replay 10% of all sessions
-    replaysOnErrorSampleRate: 1.0,              // Replay 100% of sessions with errors
-    integrations: [
-      Sentry.browserTracingIntegration(),
-      Sentry.replayIntegration(),
-    ],
-  });
-}
-*/
 
-// Debug Marker
-console.log('MAIN.TSX: Initialization started');
+// Sentry initialization placeholder
+// if (import.meta.env.VITE_SENTRY_DSN) { ... }
+
 const rootElement = document.getElementById('root');
-if (rootElement) {
-  console.log('MAIN.TSX: Root element found, mounting React');
-} else {
-  console.error('MAIN.TSX: Root element NOT found');
+console.log('MAIN.TSX: Root element:', rootElement);
+if (!rootElement) {
+  console.error('MAIN.TSX: Root element #root not found!');
 }
 
-const root = ReactDOM.createRoot(rootElement as HTMLElement);
-root.render(
-  <React.StrictMode>
-    <ErrorBoundary>
-      <App />
-      <Analytics />
-    </ErrorBoundary>
-  </React.StrictMode>
-);
+try {
+  console.log('MAIN.TSX: Creating root and rendering');
+  const root = ReactDOM.createRoot(rootElement as HTMLElement);
+  root.render(
+    <React.StrictMode>
+      <ErrorBoundary>
+        <App />
+        <Analytics />
+      </ErrorBoundary>
+    </React.StrictMode>
+  );
+  console.log('MAIN.TSX: Render call completed');
+} catch (error) {
+  console.error('MAIN.TSX: Fatal render error:', error);
+}
