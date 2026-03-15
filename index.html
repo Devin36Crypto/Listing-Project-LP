@@ -3,12 +3,12 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/webp" href="/prism-master-verified.webp?v=9999" />
+  <link rel="icon" type="image/png" href="/prism-logo.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Listening Project | Secure Real-time AI Translation & Transcription</title>
   <meta name="description"
-    content="Listening Project: The most secure, private, real-time AI emotional analysis tool. Zero-knowledge encryption for your mobile and desktop audio processing." />
+    content="Secure, private, and real-time AI transcription and translation. Listening Project uses zero-knowledge encryption to ensure your conversations stay yours." />
   <meta name="keywords" content="AI transcription, emotional analysis, real-time translation, secure audio processing, private AI" />
   <link rel="canonical" href="https://www.listening-project.app/" />
 
@@ -33,12 +33,11 @@
 <body>
   <div id="root">
     <!-- Fallback content if JS fails to mount -->
-    <div id="fallback-ui" style="background:#010409; color:white; height:100vh; display:flex; align-items:center; justify-content:center; font-family:sans-serif; transition: opacity 0.5s ease;">
-      <div style="text-align:center;">
-        <h2 style="margin-bottom:10px; font-weight:300; letter-spacing:1px;">Initializing Secure Core...</h2>
-        <div style="width:40px; height:40px; border:3px solid #00e5ff; border-top:3px solid transparent; border-radius:50%; animation:spin 1s linear infinite; margin:0 auto;"></div>
-        <style>@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }</style>
-        <p style="margin-top:20px; font-size:12px; color:#444;">If this takes more than 5 seconds, check your connection or browser console.</p>
+    <div id="fallback-ui" class="fallback-ui-wrapper">
+      <div class="fallback-ui-container">
+        <h2 class="fallback-ui-title">Initializing Secure Core...</h2>
+        <div class="fallback-ui-spinner"></div>
+        <p class="fallback-ui-hint">If this takes more than 5 seconds, check your connection or browser console.</p>
       </div>
     </div>
   </div>

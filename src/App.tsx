@@ -99,22 +99,35 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen bg-[#010409] text-white font-sans selection:bg-brand-500/30 overflow-x-hidden relative">
+    <div className="min-h-screen bg-[#1a1d22] text-white font-sans selection:bg-brand-500/30 overflow-x-hidden relative">
       {/* Dynamic Background Atmosphere with Prism Icons */}
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-brand-500/10 rounded-full blur-[120px] animate-float" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-sky-500/5 rounded-full blur-[150px] animate-float" style={{ animationDelay: '-5s' }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60%] h-[60%] bg-blue-600/5 rounded-full blur-[180px] animate-neural-glow" />
+        <img 
+          src="/prism-logo.png" 
+          alt="" 
+          className="absolute top-[-5%] left-[-5%] w-[40%] h-[40%] opacity-[0.08] blur-[40px] animate-float mix-blend-screen" 
+        />
+        <img 
+          src="/prism-logo.png" 
+          alt="" 
+          className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] opacity-[0.05] blur-[60px] animate-float mix-blend-screen" 
+          style={{ animationDelay: '-5s' }} 
+        />
+        <img 
+          src="/prism-logo.png" 
+          alt="" 
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70%] h-[70%] opacity-[0.03] blur-[100px] animate-neural-glow mix-blend-screen" 
+        />
         
         {/* Floating branded elements for premium feel */}
         <img 
-          src="/prism-official-brand-mark.png" 
+          src="/prism-logo.png" 
           alt="" 
           className="absolute top-[15%] right-[10%] w-40 h-40 opacity-15 blur-[1px] animate-float" 
           style={{ animationDelay: '-4s' }}
         />
         <img 
-          src="/prism-master-verified.webp" 
+          src="/prism-logo.png" 
           alt="" 
           className="absolute bottom-[20%] left-[5%] w-56 h-56 opacity-10 blur-[3px] animate-float" 
           style={{ animationDelay: '-12s' }}

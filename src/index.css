@@ -85,3 +85,46 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* Fallback UI Classes */
+.fallback-ui-wrapper {
+  background: #1a1d22;
+  color: white;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+  transition: opacity 0.5s ease;
+}
+
+.fallback-ui-container {
+  text-align: center;
+}
+
+.fallback-ui-title {
+  margin-bottom: 10px;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.fallback-ui-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #00e5ff;
+  border-top: 3px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+
+.fallback-ui-hint {
+  margin-top: 20px;
+  font-size: 12px;
+  color: #444;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

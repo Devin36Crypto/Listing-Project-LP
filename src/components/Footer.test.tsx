@@ -5,8 +5,8 @@ import Footer from './Footer';
 describe('Footer Component', () => {
   it('renders branding and copyright', () => {
     render(<Footer />);
-    expect(screen.getByText('ListeningProjectLp')).toBeInTheDocument();
-    expect(screen.getByText(/© \d{4} ListeningProjectLp/)).toBeInTheDocument();
+    expect(screen.getByText('Listening Project')).toBeInTheDocument();
+    expect(screen.getByText(/© \d{4} Listening Project/)).toBeInTheDocument();
   });
 
   it('calls modal handler when About Us is clicked', () => {

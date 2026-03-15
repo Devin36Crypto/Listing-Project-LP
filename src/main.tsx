@@ -1,4 +1,5 @@
-console.log('MAIN.TSX: Initialization started');
+console.log('MAIN.TSX: Initialization started - Version 1.0.1');
+
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import * as Sentry from '@sentry/react';
@@ -7,29 +8,44 @@ import App from './App';
 import ErrorBoundary from './components/ErrorBoundary';
 import './index.css';
 
-
-
-// Sentry initialization placeholder
-// if (import.meta.env.VITE_SENTRY_DSN) { ... }
-
+// Client-side hydration guard
 const rootElement = document.getElementById('root');
-console.log('MAIN.TSX: Root element:', rootElement);
-if (!rootElement) {
-  console.error('MAIN.TSX: Root element #root not found!');
-}
+console.log('MAIN.TSX: Checking root element:', !!rootElement);
 
-try {
-  console.log('MAIN.TSX: Creating root and rendering');
-  const root = ReactDOM.createRoot(rootElement as HTMLElement);
-  root.render(
-    <React.StrictMode>
-      <ErrorBoundary>
-        <App />
-        <Analytics />
-      </ErrorBoundary>
-    </React.StrictMode>
-  );
-  console.log('MAIN.TSX: Render call completed');
-} catch (error) {
-  console.error('MAIN.TSX: Fatal render error:', error);
+if (!rootElement) {
+  console.error('MAIN.TSX: Critical Error - Root element #root not found!');
+} else {
+  try {
+    console.log('MAIN.TSX: Starting React hydration...');
+    const root = ReactDOM.createRoot(rootElement);
+    
+    root.render(
+      <React.StrictMode>
+        <ErrorBoundary>
+          <App />
+          <Analytics />
+        </ErrorBoundary>
+      </React.StrictMode>
+    );
+    
+    // Successful render marker
+    console.log('MAIN.TSX: Initial render call successful');
+    
+    // Attempt to clear fallback after a microtask to allow initial paint
+    setTimeout(() => {
+      const fallback = document.getElementById('fallback-ui');
+      if (fallback) {
+        console.log('MAIN.TSX: Clearning fallback UI');
+        fallback.style.display = 'none';
+      }
+    }, 100);
+
+  } catch (error) {
+    console.error('MAIN.TSX: Fatal rendering exception:', error);
+    const fallbackHint = document.querySelector('.fallback-ui-hint');
+    if (fallbackHint) {
+      fallbackHint.textContent = 'Fatal Error: ' + (error instanceof Error ? error.message : 'Unknown error');
+      fallbackHint.classList.add('text-red-500');
+    }
+  }
 }

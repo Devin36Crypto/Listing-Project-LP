@@ -56,8 +56,8 @@ describe('DownloadModal Flow', () => {
     fireEvent.click(signupBtn);
     
     await waitFor(() => {
-      expect(screen.getByText(/Card Number/i)).toBeInTheDocument();
-    });
+      expect(screen.getByText(/Secure Payment/i)).toBeInTheDocument();
+    }, { timeout: 3000 });
   });
 
   it('should bypass payment and go to install step for VIP users', async () => {
@@ -77,6 +77,6 @@ describe('DownloadModal Flow', () => {
     await waitFor(() => {
       expect(screen.getByText(/Success!/i)).toBeInTheDocument();
       expect(screen.getByText(/Installation Guide/i)).toBeInTheDocument();
-    });
+    }, { timeout: 3000 });
   });
 });

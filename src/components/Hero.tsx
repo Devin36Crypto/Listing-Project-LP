@@ -73,18 +73,27 @@ export default function Hero({ onOpenDownload }: { onOpenDownload: (variant: "au
     <section id="download" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
       {/* Dynamic Background Atmosphere with Prism Icons */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-[10%] left-[10%] w-64 h-64 bg-brand-500/10 rounded-full blur-[100px] animate-float opacity-50" />
-        <div className="absolute bottom-[10%] right-[10%] w-80 h-80 bg-sky-500/10 rounded-full blur-[120px] animate-float opacity-30" style={{ animationDelay: '-5s' }} />
+        <img 
+          src="/prism-logo.png" 
+          alt="" 
+          className="absolute top-[10%] left-[10%] w-96 h-96 opacity-[0.07] blur-[30px] animate-float mix-blend-screen" 
+        />
+        <img 
+          src="/prism-logo.png" 
+          alt="" 
+          className="absolute bottom-[10%] right-[10%] w-[32rem] h-[32rem] opacity-[0.04] blur-[50px] animate-float mix-blend-screen" 
+          style={{ animationDelay: '-5s' }} 
+        />
         
         {/* Floating Prism Icons */}
         <img 
-          src="/prism-official-brand-mark.png" 
+          src="/prism-logo.png" 
           alt="" 
           className="absolute top-[20%] right-[15%] w-32 h-32 opacity-20 blur-[2px] animate-float" 
           style={{ animationDelay: '-2s' }}
         />
         <img 
-          src="/prism-master-verified.webp" 
+          src="/prism-logo.png" 
           alt="" 
           className="absolute bottom-[25%] left-[15%] w-48 h-48 opacity-10 blur-[4px] animate-float" 
           style={{ animationDelay: '-8s' }}
