@@ -110,8 +110,7 @@ export default function App() {
         <img 
           src="/prism-logo.png" 
           alt="" 
-          className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] opacity-[0.05] blur-[60px] animate-float mix-blend-screen" 
-          style={{ animationDelay: '-5s' }} 
+          className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] opacity-[0.05] blur-[60px] animate-float mix-blend-screen [animation-delay:-5s]" 
         />
         <img 
           src="/prism-logo.png" 
@@ -123,14 +122,12 @@ export default function App() {
         <img 
           src="/prism-logo.png" 
           alt="" 
-          className="absolute top-[15%] right-[10%] w-40 h-40 opacity-15 blur-[1px] animate-float" 
-          style={{ animationDelay: '-4s' }}
+          className="absolute top-[15%] right-[10%] w-40 h-40 opacity-15 blur-[1px] animate-float [animation-delay:-4s]" 
         />
         <img 
           src="/prism-logo.png" 
           alt="" 
-          className="absolute bottom-[20%] left-[5%] w-56 h-56 opacity-10 blur-[3px] animate-float" 
-          style={{ animationDelay: '-12s' }}
+          className="absolute bottom-[20%] left-[5%] w-56 h-56 opacity-10 blur-[3px] animate-float [animation-delay:-12s]" 
         />
       </div>
 

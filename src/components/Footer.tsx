@@ -138,7 +138,7 @@ export default function Footer({
               onClick={onOpenStatus}
               className="flex items-center gap-2 text-xs text-gray-500 hover:text-brand-600 transition-colors"
             >
-              <div className="w-2 h-2 bg-brand-500 rounded-full animate-pulse shadow-[0_0_8px_rgba(0,229,255,0.5)]" style={{ backgroundColor: '#00e5ff' }} />
+              <div className="w-2 h-2 bg-brand-500 rounded-full animate-pulse shadow-[0_0_8px_rgba(0,229,255,0.5)]" />
               System Status
             </button>
           </div>
