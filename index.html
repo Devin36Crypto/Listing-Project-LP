@@ -31,16 +31,43 @@
 </head>
 
 <body>
-  <div id="root"></div>
+  <div id="root">
+    <!-- Fallback content if JS fails to mount -->
+    <div id="fallback-ui" style="background:#010409; color:white; height:100vh; display:flex; align-items:center; justify-content:center; font-family:sans-serif; transition: opacity 0.5s ease;">
+      <div style="text-align:center;">
+        <h2 style="margin-bottom:10px; font-weight:300; letter-spacing:1px;">Initializing Secure Core...</h2>
+        <div style="width:40px; height:40px; border:3px solid #00e5ff; border-top:3px solid transparent; border-radius:50%; animation:spin 1s linear infinite; margin:0 auto;"></div>
+        <style>@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }</style>
+        <p style="margin-top:20px; font-size:12px; color:#444;">If this takes more than 5 seconds, check your connection or browser console.</p>
+      </div>
+    </div>
+  </div>
   <script type="module" src="/src/main.tsx"></script>
   <script>
-    console.log('HTML: Inline script executing');
-    window.onload = function() {
-      console.log('HTML: Window loaded');
-      var root = document.getElementById('root');
-      if (root && root.innerHTML === "") {
-        console.log('HTML: Root is empty, providing fallback message');
-        root.innerHTML = '<div style="color:white; padding:20px;">Loading application core... if this persists, check console.</div>';
+    console.log('BOOTSTRAP: Initial HTML script running');
+    
+    // Hide fallback UI once React mounts
+    const observer = new MutationObserver(function(mutations) {
+      const root = document.getElementById('root');
+      if (root && root.innerHTML !== "" && !root.querySelector('#fallback-ui')) {
+        console.log('BOOTSTRAP: Content detected in root, cleaning up fallback');
+        observer.disconnect();
+      }
+    });
+    
+    const rootElement = document.getElementById('root');
+    if (rootElement) {
+        observer.observe(rootElement, { childList: true });
+    }
+
+    window.onerror = function(msg, url, line, col, error) {
+      console.error('BOOTSTRAP: Global error caught:', msg, 'at', url, 'line', line);
+      const root = document.getElementById('root');
+      if (root) {
+        const errDiv = document.createElement('div');
+        errDiv.style = "color:#ff4444; font-size:10px; position:fixed; bottom:10px; left:10px; z-index:9999; background:rgba(0,0,0,0.8); padding:5px; border-radius:4px; max-width:80%; word-break:break-all;";
+        errDiv.textContent = 'Critical Error: ' + msg + ' (See console)';
+        document.body.appendChild(errDiv);
       }
     };
   </script>

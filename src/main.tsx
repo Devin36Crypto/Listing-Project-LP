@@ -30,8 +30,7 @@ if (import.meta.env.VITE_SENTRY_DSN) {
 console.log('MAIN.TSX: Initialization started');
 const rootElement = document.getElementById('root');
 if (rootElement) {
-  console.log('MAIN.TSX: Root element found');
-  rootElement.innerHTML = '<div style="background:red; color:white; padding:20px; position:fixed; z-index:9999; top:0; left:0;">JS EXECUTING...</div>';
+  console.log('MAIN.TSX: Root element found, mounting React');
 } else {
   console.error('MAIN.TSX: Root element NOT found');
 }
