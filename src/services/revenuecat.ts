@@ -5,10 +5,10 @@ const revenueCatApiKey = import.meta.env.VITE_REVENUECAT_PUBLIC_API_KEY;
 let isConfigured = false;
 let mockPurchases: any = null;
 
-const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+const isLocal = typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
 
 if (!revenueCatApiKey) {
-  console.warn('Missing RevenueCat Public API Key. App will run in demo mode.');
+  if (isLocal) console.warn('Missing RevenueCat Public API Key. App will run in demo mode.');
   mockPurchases = {
     getOfferings: async () => ({
       current: {

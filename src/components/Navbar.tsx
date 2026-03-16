@@ -21,9 +21,9 @@ export default function Navbar({ onOpenDownload }: { onOpenDownload?: () => void
               <a href="#features" className="hover:text-brand-400 transition-colors px-3 py-2 rounded-md text-sm font-medium">Features</a>
               <a href="#testimonials" className="hover:text-brand-400 transition-colors px-3 py-2 rounded-md text-sm font-medium">Stories</a>
               <a href="#pricing" className="hover:text-brand-400 transition-colors px-3 py-2 rounded-md text-sm font-medium">Pricing</a>
-              {window.location.port !== '3001' && (
+              {(import.meta.env.VITE_APP_URL || (typeof window !== 'undefined' && window.location.port !== '3001')) && (
                 <a 
-                  href="http://localhost:3001" 
+                  href={import.meta.env.VITE_APP_URL || "http://localhost:3001"} 
                   className="bg-white/10 hover:bg-white/20 transition-all text-white px-4 py-2 rounded-full text-sm font-bold border border-white/20"
                 >
                   Launch App

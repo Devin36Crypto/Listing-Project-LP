@@ -102,7 +102,9 @@ async function startServer() {
   process.on('SIGTERM', () => shutdown('SIGTERM'));
 
   try {
-    if (process.env.NODE_ENV !== 'production') {
+    const isProduction = process.env.NODE_ENV === 'production' || process.env.VERCEL === '1';
+    
+    if (!isProduction) {
       vite = await createViteServer({
         server: { 
           middlewareMode: true,
