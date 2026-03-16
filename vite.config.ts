@@ -13,7 +13,7 @@ export default defineConfig(({mode}) => {
       tailwindcss(),
       VitePWA({
         registerType: 'autoUpdate',
-        includeAssets: ['icon.png'],
+        includeAssets: ['prism-logo.png'],
         manifest: {
           name: 'Listening Project',
           short_name: 'Listening Project',
@@ -23,7 +23,7 @@ export default defineConfig(({mode}) => {
           display: 'standalone',
           icons: [
             {
-              src: 'icon.png',
+              src: 'prism-logo.png',
               sizes: '512x512',
               type: 'image/png',
               purpose: 'any maskable'
